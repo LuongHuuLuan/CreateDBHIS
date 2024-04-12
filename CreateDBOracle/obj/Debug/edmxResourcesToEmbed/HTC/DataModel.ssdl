@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HTCDataModelsStoreContainer">
+    <EntitySet Name="HTC_EXPENSE" EntityType="DataModels.Store.HTC_EXPENSE" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="HTC_EXPENSE_TYPE" EntityType="DataModels.Store.HTC_EXPENSE_TYPE" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="HTC_PERIOD" EntityType="DataModels.Store.HTC_PERIOD" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="HTC_PERIOD_DEPARTMENT" EntityType="DataModels.Store.HTC_PERIOD_DEPARTMENT" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="HTC_REPARTITION_RATIO" EntityType="DataModels.Store.HTC_REPARTITION_RATIO" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="HTC_REPARTITION_TYPE" EntityType="DataModels.Store.HTC_REPARTITION_TYPE" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="HTC_REVENUE" EntityType="DataModels.Store.HTC_REVENUE" store:Type="Tables" Schema="HTC_RS" />
+    <EntitySet Name="V_HTC_EXPENSE" EntityType="DataModels.Store.V_HTC_EXPENSE" store:Type="Views" Schema="HTC_RS" />
+    <EntitySet Name="V_HTC_PERIOD_DEPARTMENT" EntityType="DataModels.Store.V_HTC_PERIOD_DEPARTMENT" store:Type="Views" Schema="HTC_RS" />
+    <EntitySet Name="V_HTC_REPARTITION_RATIO" EntityType="DataModels.Store.V_HTC_REPARTITION_RATIO" store:Type="Views" Schema="HTC_RS" />
+    <AssociationSet Name="HTC_EXPENSE_FK1" Association="DataModels.Store.HTC_EXPENSE_FK1">
+      <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+      <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_EXPENSE_FK2" Association="DataModels.Store.HTC_EXPENSE_FK2">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_EXPENSE_TYPE_FK1" Association="DataModels.Store.HTC_EXPENSE_TYPE_FK1">
+      <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+      <End Role="HTC_EXPENSE_TYPE1" EntitySet="HTC_EXPENSE_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_PERIOD_DEPARTMENT_FK1" Association="DataModels.Store.HTC_PERIOD_DEPARTMENT_FK1">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_PERIOD_DEPARTMENT" EntitySet="HTC_PERIOD_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_REPARTITION_RATIO_FK1" Association="DataModels.Store.HTC_REPARTITION_RATIO_FK1">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_REPARTITION_RATIO_FK2" Association="DataModels.Store.HTC_REPARTITION_RATIO_FK2">
+      <End Role="HTC_REPARTITION_TYPE" EntitySet="HTC_REPARTITION_TYPE" />
+      <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_REVENUE_FK1" Association="DataModels.Store.HTC_REVENUE_FK1">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_REVENUE" EntitySet="HTC_REVENUE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HTC_EXPENSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="EXPENSE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="EXPENSE_TIME" Type="number" Nullable="false" Precision="14" />
+    <Property Name="EXPENSE_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="PRICE" Type="number" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HTC_EXPENSE_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="EXPENSE_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="EXPENSE_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PARENT_ID" Type="number" Precision="19" />
+    <Property Name="IS_ALLOW_EXPENSE" Type="number" Precision="2" />
+    <Property Name="IS_PLUS" Type="number" Precision="2" />
+  </EntityType>
+  <EntityType Name="HTC_PERIOD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="FROM_TIME" Type="number" Precision="14" />
+    <Property Name="TO_TIME" Type="number" Precision="14" />
+    <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="YEAR" Type="number" Precision="4" />
+    <Property Name="MONTH" Type="number" Precision="2" />
+  </EntityType>
+  <EntityType Name="HTC_PERIOD_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="LABOR_AMOUNT" Type="number" Precision="19" />
+    <Property Name="CLINICAL_DAY_AMOUNT" Type="number" Precision="19" />
+    <Property Name="CLINICAL_AMOUNT" Type="number" Precision="19" />
+    <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="number" Precision="19" />
+    <Property Name="END_TREATMENT_AMOUNT" Type="number" Precision="19" />
+    <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="HTC_REPARTITION_RATIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="REPARTITION_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="RATIO" Type="number" Nullable="false" Precision="5" Scale="4" />
+    <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HTC_REPARTITION_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="REPARTITION_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+    <Property Name="REPARTITION_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="IS_HAS_NOT_RATIO" Type="number" Precision="2" />
+  </EntityType>
+  <EntityType Name="HTC_REVENUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="REVENUE_CODE" Type="varchar2" Nullable="false" MaxLength="14" />
+    <Property Name="REVENUE_TIME" Type="number" Nullable="false" Precision="14" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="AMOUNT" Type="number" Nullable="false" Precision="19" Scale="2" />
+    <Property Name="PRICE" Type="number" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="SERVICE_CODE" Type="varchar2" Nullable="false" MaxLength="25" />
+    <Property Name="SERVICE_NAME" Type="varchar2" MaxLength="500" />
+    <Property Name="PATIENT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+    <Property Name="PATIENT_TYPE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="SERVICE_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+    <Property Name="SERVICE_TYPE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="SERVICE_UNIT_CODE" Type="varchar2" MaxLength="3" />
+    <Property Name="SERVICE_UNIT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="REQUEST_DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="REQUEST_DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="REQUEST_ROOM_CODE" Type="varchar2" MaxLength="10" />
+    <Property Name="REQUEST_ROOM_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="REQUEST_ROOM_TYPE_CODE" Type="varchar2" MaxLength="2" />
+    <Property Name="REQUEST_ROOM_TYPE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="REQUEST_LOGINNAME" Type="varchar2" MaxLength="50" />
+    <Property Name="REQUEST_USERNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="EXECUTE_DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="EXECUTE_DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="varchar2" MaxLength="10" />
+    <Property Name="EXECUTE_ROOM_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="EXECUTE_ROOM_TYPE_CODE" Type="varchar2" MaxLength="2" />
+    <Property Name="EXECUTE_ROOM_TYPE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="EXECUTE_LOGINNAME" Type="varchar2" MaxLength="50" />
+    <Property Name="EXECUTE_USERNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="SERE_SERV_ID" Type="number" Precision="19" />
+    <Property Name="HEIN_PRICE" Type="number" Precision="19" Scale="4" />
+    <Property Name="VIR_PATIENT_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_TOTAL_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_TOTAL_HEIN_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_TOTAL_PATIENT_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="PATIENT_CODE" Type="varchar2" MaxLength="10" />
+    <Property Name="PATIENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="DOB" Type="number" Precision="14" />
+    <Property Name="IN_TIME" Type="number" Precision="14" />
+    <Property Name="OUT_TIME" Type="number" Precision="14" />
+    <Property Name="XANHPON_SYMBOL" Type="varchar2" MaxLength="20" />
+    <Property Name="BILL_NUMBER" Type="number" Precision="19" />
+  </EntityType>
+  <EntityType Name="V_HTC_EXPENSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="EXPENSE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="EXPENSE_TIME" Type="number" Nullable="false" Precision="14" />
+    <Property Name="EXPENSE_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="PRICE" Type="number" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="EXPENSE_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="EXPENSE_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PARENT_ID" Type="number" Precision="19" />
+    <Property Name="IS_ALLOW_EXPENSE" Type="number" Precision="2" />
+    <Property Name="IS_PLUS" Type="number" Precision="2" />
+    <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="FROM_TIME" Type="number" Precision="14" />
+    <Property Name="TO_TIME" Type="number" Precision="14" />
+    <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_HTC_PERIOD_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="LABOR_AMOUNT" Type="number" Precision="19" />
+    <Property Name="CLINICAL_DAY_AMOUNT" Type="number" Precision="19" />
+    <Property Name="CLINICAL_AMOUNT" Type="number" Precision="19" />
+    <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="number" Precision="19" />
+    <Property Name="END_TREATMENT_AMOUNT" Type="number" Precision="19" />
+    <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+    <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="FROM_TIME" Type="number" Precision="14" />
+    <Property Name="TO_TIME" Type="number" Precision="14" />
+    <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_HTC_REPARTITION_RATIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="REPARTITION_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="RATIO" Type="number" Nullable="false" Precision="5" Scale="4" />
+    <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="REPARTITION_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+    <Property Name="REPARTITION_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <Association Name="HTC_EXPENSE_FK1">
+    <End Role="HTC_EXPENSE_TYPE" Type="DataModels.Store.HTC_EXPENSE_TYPE" Multiplicity="1" />
+    <End Role="HTC_EXPENSE" Type="DataModels.Store.HTC_EXPENSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_EXPENSE_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_EXPENSE">
+        <PropertyRef Name="EXPENSE_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_EXPENSE_FK2">
+    <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_EXPENSE" Type="DataModels.Store.HTC_EXPENSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_EXPENSE">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_EXPENSE_TYPE_FK1">
+    <End Role="HTC_EXPENSE_TYPE" Type="DataModels.Store.HTC_EXPENSE_TYPE" Multiplicity="0..1" />
+    <End Role="HTC_EXPENSE_TYPE1" Type="DataModels.Store.HTC_EXPENSE_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_EXPENSE_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_EXPENSE_TYPE1">
+        <PropertyRef Name="PARENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_PERIOD_DEPARTMENT_FK1">
+    <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_PERIOD_DEPARTMENT" Type="DataModels.Store.HTC_PERIOD_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_PERIOD_DEPARTMENT">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_REPARTITION_RATIO_FK1">
+    <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_REPARTITION_RATIO" Type="DataModels.Store.HTC_REPARTITION_RATIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_REPARTITION_RATIO">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_REPARTITION_RATIO_FK2">
+    <End Role="HTC_REPARTITION_TYPE" Type="DataModels.Store.HTC_REPARTITION_TYPE" Multiplicity="1" />
+    <End Role="HTC_REPARTITION_RATIO" Type="DataModels.Store.HTC_REPARTITION_RATIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_REPARTITION_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_REPARTITION_RATIO">
+        <PropertyRef Name="REPARTITION_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_REVENUE_FK1">
+    <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_REVENUE" Type="DataModels.Store.HTC_REVENUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_REVENUE">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

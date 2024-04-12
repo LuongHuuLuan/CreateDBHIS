@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDBOracle", "CreateDBOracle\CreateDBOracle.csproj", "{6137F487-2C3E-4281-883B-AEF0973725F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6137F487-2C3E-4281-883B-AEF0973725F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6137F487-2C3E-4281-883B-AEF0973725F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6137F487-2C3E-4281-883B-AEF0973725F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6137F487-2C3E-4281-883B-AEF0973725F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5258CE80-617D-4D61-9115-1D45B54FA68E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelsStoreContainer" CdmEntityContainer="ACSEntities">
+    <EntitySetMapping Name="ACS_ACTIVITY_LOG">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_ACTIVITY_LOG)">
+        <MappingFragment StoreEntitySet="ACS_ACTIVITY_LOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="ACTIVITY_TYPE_ID" ColumnName="ACTIVITY_TYPE_ID" />
+          <ScalarProperty Name="ACTIVITY_TIME" ColumnName="ACTIVITY_TIME" />
+          <ScalarProperty Name="IP_ADDRESS" ColumnName="IP_ADDRESS" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="EXECUTE_LOGINNAME" ColumnName="EXECUTE_LOGINNAME" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="VIR_ACTIVITY_DATE" ColumnName="VIR_ACTIVITY_DATE" />
+          <ScalarProperty Name="VIR_ACTIVITY_MONTH" ColumnName="VIR_ACTIVITY_MONTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_ACTIVITY_TYPE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_ACTIVITY_TYPE)">
+        <MappingFragment StoreEntitySet="ACS_ACTIVITY_TYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ACTIVITY_TYPE_CODE" ColumnName="ACTIVITY_TYPE_CODE" />
+          <ScalarProperty Name="ACTIVITY_TYPE_NAME" ColumnName="ACTIVITY_TYPE_NAME" />
+          <ScalarProperty Name="ACTIVITY_TYPE_INFO" ColumnName="ACTIVITY_TYPE_INFO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_APP_OTP_TYPE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_APP_OTP_TYPE)">
+        <MappingFragment StoreEntitySet="ACS_APP_OTP_TYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="OTP_TYPE_ID" ColumnName="OTP_TYPE_ID" />
+          <ScalarProperty Name="SMS_TEMPLATE_CODE" ColumnName="SMS_TEMPLATE_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_APPLICATION">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_APPLICATION)">
+        <MappingFragment StoreEntitySet="ACS_APPLICATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="APPLICATION_NAME" ColumnName="APPLICATION_NAME" />
+          <ScalarProperty Name="ALLOW_VERSION" ColumnName="ALLOW_VERSION" />
+          <ScalarProperty Name="IS_CHECK_VERSION" ColumnName="IS_CHECK_VERSION" />
+          <ScalarProperty Name="SMS_URL" ColumnName="SMS_URL" />
+          <ScalarProperty Name="SMS_ACTIVE_TEMP" ColumnName="SMS_ACTIVE_TEMP" />
+          <ScalarProperty Name="SMS_CHANGE_PASS_TEMP" ColumnName="SMS_CHANGE_PASS_TEMP" />
+          <ScalarProperty Name="IS_VERIFY_OTP" ColumnName="IS_VERIFY_OTP" />
+          <ScalarProperty Name="IS_LICENSE_ISSUED" ColumnName="IS_LICENSE_ISSUED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_APPLICATION_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_APPLICATION_ROLE)">
+        <MappingFragment StoreEntitySet="ACS_APPLICATION_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_AUTHEN_REQUEST">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_AUTHEN_REQUEST)">
+        <MappingFragment StoreEntitySet="ACS_AUTHEN_REQUEST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="AUTHOR_SYSTEM_ID" ColumnName="AUTHOR_SYSTEM_ID" />
+          <ScalarProperty Name="REQUEST_TIME" ColumnName="REQUEST_TIME" />
+          <ScalarProperty Name="IS_ISSUED_TOKEN" ColumnName="IS_ISSUED_TOKEN" />
+          <ScalarProperty Name="REQUEST_USERNAME" ColumnName="REQUEST_USERNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="AUTHENTICATION_CODE" ColumnName="AUTHENTICATION_CODE" />
+          <ScalarProperty Name="ADDITIONAL_INFO" ColumnName="ADDITIONAL_INFO" />
+          <ScalarProperty Name="TDL_AUTHOR_SYSTEM_CODE" ColumnName="TDL_AUTHOR_SYSTEM_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_AUTHOR_SYSTEM">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_AUTHOR_SYSTEM)">
+        <MappingFragment StoreEntitySet="ACS_AUTHOR_SYSTEM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="AUTHOR_SYSTEM_CODE" ColumnName="AUTHOR_SYSTEM_CODE" />
+          <ScalarProperty Name="AUTHOR_SYSTEM_NAME" ColumnName="AUTHOR_SYSTEM_NAME" />
+          <ScalarProperty Name="SERCURE_KEY" ColumnName="SERCURE_KEY" />
+          <ScalarProperty Name="AUTHOR_SYSTEM_TYPE_ID" ColumnName="AUTHOR_SYSTEM_TYPE_ID" />
+          <ScalarProperty Name="WEB_ADDRESS" ColumnName="WEB_ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_CONTROL">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_CONTROL)">
+        <MappingFragment StoreEntitySet="ACS_CONTROL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="CONTROL_CODE" ColumnName="CONTROL_CODE" />
+          <ScalarProperty Name="CONTROL_NAME" ColumnName="CONTROL_NAME" />
+          <ScalarProperty Name="IS_ANONYMOUS" ColumnName="IS_ANONYMOUS" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_CONTROL_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_CONTROL_ROLE)">
+        <MappingFragment StoreEntitySet="ACS_CONTROL_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="CONTROL_ID" ColumnName="CONTROL_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_CREDENTIAL_DATA">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_CREDENTIAL_DATA)">
+        <MappingFragment StoreEntitySet="ACS_CREDENTIAL_DATA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="RESOURCE_SYSTEM_CODE" ColumnName="RESOURCE_SYSTEM_CODE" />
+          <ScalarProperty Name="TOKEN_CODE" ColumnName="TOKEN_CODE" />
+          <ScalarProperty Name="DATA_KEY" ColumnName="DATA_KEY" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_MODULE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_MODULE)">
+        <MappingFragment StoreEntitySet="ACS_MODULE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MODULE_NAME" ColumnName="MODULE_NAME" />
+          <ScalarProperty Name="MODULE_LINK" ColumnName="MODULE_LINK" />
+          <ScalarProperty Name="IS_VISIBLE" ColumnName="IS_VISIBLE" />
+          <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+          <ScalarProperty Name="IS_LEAF" ColumnName="IS_LEAF" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="MODULE_GROUP_ID" ColumnName="MODULE_GROUP_ID" />
+          <ScalarProperty Name="ICON_LINK" ColumnName="ICON_LINK" />
+          <ScalarProperty Name="IS_ANONYMOUS" ColumnName="IS_ANONYMOUS" />
+          <ScalarProperty Name="MODULE_URL" ColumnName="MODULE_URL" />
+          <ScalarProperty Name="VIR_MODULE_LINK" ColumnName="VIR_MODULE_LINK" />
+          <ScalarProperty Name="VIDEO_URLS" ColumnName="VIDEO_URLS" />
+          <ScalarProperty Name="IS_NOT_SHOW_DIALOG" ColumnName="IS_NOT_SHOW_DIALOG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_MODULE_GROUP">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_MODULE_GROUP)">
+        <MappingFragment StoreEntitySet="ACS_MODULE_GROUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MODULE_GROUP_CODE" ColumnName="MODULE_GROUP_CODE" />
+          <ScalarProperty Name="MODULE_GROUP_NAME" ColumnName="MODULE_GROUP_NAME" />
+          <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+          <ScalarProperty Name="ICON_LINK" ColumnName="ICON_LINK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_MODULE_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_MODULE_ROLE)">
+        <MappingFragment StoreEntitySet="ACS_MODULE_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_OTP">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_OTP)">
+        <MappingFragment StoreEntitySet="ACS_OTP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="OTP_CODE" ColumnName="OTP_CODE" />
+          <ScalarProperty Name="OTP_TYPE" ColumnName="OTP_TYPE" />
+          <ScalarProperty Name="EXPIRE_TIME" ColumnName="EXPIRE_TIME" />
+          <ScalarProperty Name="LOGINAME" ColumnName="LOGINAME" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="OTP_TYPE_ID" ColumnName="OTP_TYPE_ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="VIR_EXPIRE_DATE" ColumnName="VIR_EXPIRE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_OTP_TYPE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_OTP_TYPE)">
+        <MappingFragment StoreEntitySet="ACS_OTP_TYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="OPT_TYPE_CODE" ColumnName="OPT_TYPE_CODE" />
+          <ScalarProperty Name="OPT_TYPE_NAME" ColumnName="OPT_TYPE_NAME" />
+          <ScalarProperty Name="EXPIRE_TIME_NUMBER" ColumnName="EXPIRE_TIME_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_ROLE)">
+        <MappingFragment StoreEntitySet="ACS_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="IS_FULL" ColumnName="IS_FULL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_ROLE_AUTHOR">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_ROLE_AUTHOR)">
+        <MappingFragment StoreEntitySet="ACS_ROLE_AUTHOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="AUTHOR_SYSTEM_ID" ColumnName="AUTHOR_SYSTEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_ROLE_BASE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_ROLE_BASE)">
+        <MappingFragment StoreEntitySet="ACS_ROLE_BASE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ROLE_BASE_ID" ColumnName="ROLE_BASE_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_ROLE_USER">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_ROLE_USER)">
+        <MappingFragment StoreEntitySet="ACS_ROLE_USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_TOKEN">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_TOKEN)">
+        <MappingFragment StoreEntitySet="ACS_TOKEN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="TOKEN_CODE" ColumnName="TOKEN_CODE" />
+          <ScalarProperty Name="RENEW_CODE" ColumnName="RENEW_CODE" />
+          <ScalarProperty Name="EXPIRE_TIME" ColumnName="EXPIRE_TIME" />
+          <ScalarProperty Name="APP_VERSION" ColumnName="APP_VERSION" />
+          <ScalarProperty Name="MACHINE_NAME" ColumnName="MACHINE_NAME" />
+          <ScalarProperty Name="LAST_ACCESS_TIME" ColumnName="LAST_ACCESS_TIME" />
+          <ScalarProperty Name="LOGIN_TIME" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LOGIN_ADDRESS" ColumnName="LOGIN_ADDRESS" />
+          <ScalarProperty Name="LOGIN_NAME" ColumnName="LOGIN_NAME" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="AUTHENTICATION_CODE" ColumnName="AUTHENTICATION_CODE" />
+          <ScalarProperty Name="AUTHOR_SYSTEM_CODE" ColumnName="AUTHOR_SYSTEM_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACS_USER">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.ACS_USER)">
+        <MappingFragment StoreEntitySet="ACS_USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="G_CODE" ColumnName="G_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_APPLICATION_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_APPLICATION_ROLE)">
+        <MappingFragment StoreEntitySet="V_ACS_APPLICATION_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="APPLICATION_NAME" ColumnName="APPLICATION_NAME" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_CONTROL">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_CONTROL)">
+        <MappingFragment StoreEntitySet="V_ACS_CONTROL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="CONTROL_CODE" ColumnName="CONTROL_CODE" />
+          <ScalarProperty Name="CONTROL_NAME" ColumnName="CONTROL_NAME" />
+          <ScalarProperty Name="IS_ANONYMOUS" ColumnName="IS_ANONYMOUS" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="APPLICATION_NAME" ColumnName="APPLICATION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_CONTROL_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_CONTROL_ROLE)">
+        <MappingFragment StoreEntitySet="V_ACS_CONTROL_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="CONTROL_ID" ColumnName="CONTROL_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="CONTROL_CODE" ColumnName="CONTROL_CODE" />
+          <ScalarProperty Name="CONTROL_NAME" ColumnName="CONTROL_NAME" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_MODULE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_MODULE)">
+        <MappingFragment StoreEntitySet="V_ACS_MODULE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MODULE_NAME" ColumnName="MODULE_NAME" />
+          <ScalarProperty Name="MODULE_LINK" ColumnName="MODULE_LINK" />
+          <ScalarProperty Name="IS_VISIBLE" ColumnName="IS_VISIBLE" />
+          <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+          <ScalarProperty Name="IS_LEAF" ColumnName="IS_LEAF" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="MODULE_GROUP_ID" ColumnName="MODULE_GROUP_ID" />
+          <ScalarProperty Name="ICON_LINK" ColumnName="ICON_LINK" />
+          <ScalarProperty Name="IS_ANONYMOUS" ColumnName="IS_ANONYMOUS" />
+          <ScalarProperty Name="MODULE_URL" ColumnName="MODULE_URL" />
+          <ScalarProperty Name="VIR_MODULE_LINK" ColumnName="VIR_MODULE_LINK" />
+          <ScalarProperty Name="VIDEO_URLS" ColumnName="VIDEO_URLS" />
+          <ScalarProperty Name="IS_NOT_SHOW_DIALOG" ColumnName="IS_NOT_SHOW_DIALOG" />
+          <ScalarProperty Name="MODULE_GROUP_CODE" ColumnName="MODULE_GROUP_CODE" />
+          <ScalarProperty Name="MODULE_GROUP_NAME" ColumnName="MODULE_GROUP_NAME" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="APPLICATION_NAME" ColumnName="APPLICATION_NAME" />
+          <ScalarProperty Name="PARENT_NAME" ColumnName="PARENT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_MODULE_ROLE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_MODULE_ROLE)">
+        <MappingFragment StoreEntitySet="V_ACS_MODULE_ROLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="MODULE_NAME" ColumnName="MODULE_NAME" />
+          <ScalarProperty Name="MODULE_LINK" ColumnName="MODULE_LINK" />
+          <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="MODULE_URL" ColumnName="MODULE_URL" />
+          <ScalarProperty Name="APPLICATION_CODE" ColumnName="APPLICATION_CODE" />
+          <ScalarProperty Name="APPLICATION_NAME" ColumnName="APPLICATION_NAME" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_ROLE_BASE">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_ROLE_BASE)">
+        <MappingFragment StoreEntitySet="V_ACS_ROLE_BASE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ROLE_BASE_ID" ColumnName="ROLE_BASE_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="BASE_CODE" ColumnName="BASE_CODE" />
+          <ScalarProperty Name="BASE_NAME" ColumnName="BASE_NAME" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ACS_ROLE_USER">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModels.V_ACS_ROLE_USER)">
+        <MappingFragment StoreEntitySet="V_ACS_ROLE_USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

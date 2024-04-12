@@ -1,0 +1,867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="18.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+  <EntityContainer Name="DataModelsStoreContainer">
+    <EntitySet Name="ACS_ACTIVITY_LOG" EntityType="DataModels.Store.ACS_ACTIVITY_LOG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_ACTIVITY_TYPE" EntityType="DataModels.Store.ACS_ACTIVITY_TYPE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_APP_OTP_TYPE" EntityType="DataModels.Store.ACS_APP_OTP_TYPE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_APPLICATION" EntityType="DataModels.Store.ACS_APPLICATION" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_APPLICATION_ROLE" EntityType="DataModels.Store.ACS_APPLICATION_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_AUTHEN_REQUEST" EntityType="DataModels.Store.ACS_AUTHEN_REQUEST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_AUTHOR_SYSTEM" EntityType="DataModels.Store.ACS_AUTHOR_SYSTEM" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_CONTROL" EntityType="DataModels.Store.ACS_CONTROL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_CONTROL_ROLE" EntityType="DataModels.Store.ACS_CONTROL_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_CREDENTIAL_DATA" EntityType="DataModels.Store.ACS_CREDENTIAL_DATA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_MODULE" EntityType="DataModels.Store.ACS_MODULE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_MODULE_GROUP" EntityType="DataModels.Store.ACS_MODULE_GROUP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_MODULE_ROLE" EntityType="DataModels.Store.ACS_MODULE_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_OTP" EntityType="DataModels.Store.ACS_OTP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_OTP_TYPE" EntityType="DataModels.Store.ACS_OTP_TYPE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_ROLE" EntityType="DataModels.Store.ACS_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_ROLE_AUTHOR" EntityType="DataModels.Store.ACS_ROLE_AUTHOR" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_ROLE_BASE" EntityType="DataModels.Store.ACS_ROLE_BASE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_ROLE_USER" EntityType="DataModels.Store.ACS_ROLE_USER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_TOKEN" EntityType="DataModels.Store.ACS_TOKEN" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ACS_USER" EntityType="DataModels.Store.ACS_USER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_APPLICATION_ROLE" EntityType="DataModels.Store.V_ACS_APPLICATION_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_CONTROL" EntityType="DataModels.Store.V_ACS_CONTROL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_CONTROL_ROLE" EntityType="DataModels.Store.V_ACS_CONTROL_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_MODULE" EntityType="DataModels.Store.V_ACS_MODULE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_MODULE_ROLE" EntityType="DataModels.Store.V_ACS_MODULE_ROLE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_ROLE_BASE" EntityType="DataModels.Store.V_ACS_ROLE_BASE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_ACS_ROLE_USER" EntityType="DataModels.Store.V_ACS_ROLE_USER" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ACS_ACTIVITY_LOG_FK1" Association="DataModels.Store.ACS_ACTIVITY_LOG_FK1">
+      <End Role="ACS_ACTIVITY_TYPE" EntitySet="ACS_ACTIVITY_TYPE" />
+      <End Role="ACS_ACTIVITY_LOG" EntitySet="ACS_ACTIVITY_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_APPLICATION_ROLE_FK1" Association="DataModels.Store.ACS_APPLICATION_ROLE_FK1">
+      <End Role="ACS_APPLICATION" EntitySet="ACS_APPLICATION" />
+      <End Role="ACS_APPLICATION_ROLE" EntitySet="ACS_APPLICATION_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_CONTROL_FK1" Association="DataModels.Store.ACS_CONTROL_FK1">
+      <End Role="ACS_APPLICATION" EntitySet="ACS_APPLICATION" />
+      <End Role="ACS_CONTROL" EntitySet="ACS_CONTROL" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_MODULE_FK1" Association="DataModels.Store.ACS_MODULE_FK1">
+      <End Role="ACS_APPLICATION" EntitySet="ACS_APPLICATION" />
+      <End Role="ACS_MODULE" EntitySet="ACS_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_APPLICATION_ROLE_FK2" Association="DataModels.Store.ACS_APPLICATION_ROLE_FK2">
+      <End Role="ACS_ROLE" EntitySet="ACS_ROLE" />
+      <End Role="ACS_APPLICATION_ROLE" EntitySet="ACS_APPLICATION_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_CONTROL_ROLE_FK1" Association="DataModels.Store.ACS_CONTROL_ROLE_FK1">
+      <End Role="ACS_CONTROL" EntitySet="ACS_CONTROL" />
+      <End Role="ACS_CONTROL_ROLE" EntitySet="ACS_CONTROL_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_CONTROL_ROLE_FK2" Association="DataModels.Store.ACS_CONTROL_ROLE_FK2">
+      <End Role="ACS_ROLE" EntitySet="ACS_ROLE" />
+      <End Role="ACS_CONTROL_ROLE" EntitySet="ACS_CONTROL_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_MODULE_FK2" Association="DataModels.Store.ACS_MODULE_FK2">
+      <End Role="ACS_MODULE_GROUP" EntitySet="ACS_MODULE_GROUP" />
+      <End Role="ACS_MODULE" EntitySet="ACS_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_MODULE_ROLE_FK1" Association="DataModels.Store.ACS_MODULE_ROLE_FK1">
+      <End Role="ACS_MODULE" EntitySet="ACS_MODULE" />
+      <End Role="ACS_MODULE_ROLE" EntitySet="ACS_MODULE_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_MODULE_ROLE_FK2" Association="DataModels.Store.ACS_MODULE_ROLE_FK2">
+      <End Role="ACS_ROLE" EntitySet="ACS_ROLE" />
+      <End Role="ACS_MODULE_ROLE" EntitySet="ACS_MODULE_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_OTP_FK1" Association="DataModels.Store.ACS_OTP_FK1">
+      <End Role="ACS_OTP_TYPE" EntitySet="ACS_OTP_TYPE" />
+      <End Role="ACS_OTP" EntitySet="ACS_OTP" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_ROLE_BASE_FK1" Association="DataModels.Store.ACS_ROLE_BASE_FK1">
+      <End Role="ACS_ROLE" EntitySet="ACS_ROLE" />
+      <End Role="ACS_ROLE_BASE" EntitySet="ACS_ROLE_BASE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_ROLE_BASE_FK2" Association="DataModels.Store.ACS_ROLE_BASE_FK2">
+      <End Role="ACS_ROLE" EntitySet="ACS_ROLE" />
+      <End Role="ACS_ROLE_BASE" EntitySet="ACS_ROLE_BASE" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_ROLE_USER_FK1" Association="DataModels.Store.ACS_ROLE_USER_FK1">
+      <End Role="ACS_ROLE" EntitySet="ACS_ROLE" />
+      <End Role="ACS_ROLE_USER" EntitySet="ACS_ROLE_USER" />
+    </AssociationSet>
+    <AssociationSet Name="ACS_ROLE_USER_FK2" Association="DataModels.Store.ACS_ROLE_USER_FK2">
+      <End Role="ACS_USER" EntitySet="ACS_USER" />
+      <End Role="ACS_ROLE_USER" EntitySet="ACS_ROLE_USER" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ACS_ACTIVITY_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="true" MaxLength="3" />
+    <Property Name="ACTIVITY_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ACTIVITY_TIME" Type="number" Nullable="false" Precision="19" />
+    <Property Name="IP_ADDRESS" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="varchar2" Nullable="true" MaxLength="500" />
+    <Property Name="EXECUTE_LOGINNAME" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="EMAIL" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="MOBILE" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="VIR_ACTIVITY_DATE" Type="number" Nullable="true" Precision="38" />
+    <Property Name="VIR_ACTIVITY_MONTH" Type="number" Nullable="true" Precision="38" />
+  </EntityType>
+  <EntityType Name="ACS_ACTIVITY_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ACTIVITY_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="ACTIVITY_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="200" />
+    <Property Name="ACTIVITY_TYPE_INFO" Type="varchar2" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ACS_APP_OTP_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="OTP_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="SMS_TEMPLATE_CODE" Type="varchar2" Nullable="true" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="ACS_APPLICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+    <Property Name="APPLICATION_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="ALLOW_VERSION" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="IS_CHECK_VERSION" Type="number" Nullable="true" Precision="5" />
+    <Property Name="SMS_URL" Type="varchar2" Nullable="true" MaxLength="500" />
+    <Property Name="SMS_ACTIVE_TEMP" Type="varchar2" Nullable="true" MaxLength="4000" />
+    <Property Name="SMS_CHANGE_PASS_TEMP" Type="varchar2" Nullable="true" MaxLength="4000" />
+    <Property Name="IS_VERIFY_OTP" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_LICENSE_ISSUED" Type="number" Nullable="true" Precision="5" />
+  </EntityType>
+  <EntityType Name="ACS_APPLICATION_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_AUTHEN_REQUEST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="AUTHOR_SYSTEM_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="REQUEST_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="IS_ISSUED_TOKEN" Type="number" Nullable="true" Precision="5" />
+    <Property Name="REQUEST_USERNAME" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="EMAIL" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="MOBILE" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="AUTHENTICATION_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ADDITIONAL_INFO" Type="varchar2" Nullable="true" MaxLength="500" />
+    <Property Name="TDL_AUTHOR_SYSTEM_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ACS_AUTHOR_SYSTEM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="AUTHOR_SYSTEM_CODE" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="AUTHOR_SYSTEM_NAME" Type="varchar2" Nullable="false" MaxLength="200" />
+    <Property Name="SERCURE_KEY" Type="varchar2" Nullable="false" MaxLength="200" />
+    <Property Name="AUTHOR_SYSTEM_TYPE_ID" Type="number" Nullable="false" Precision="38" />
+    <Property Name="WEB_ADDRESS" Type="varchar2" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ACS_CONTROL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="CONTROL_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="CONTROL_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="IS_ANONYMOUS" Type="number" Nullable="true" Precision="5" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_CONTROL_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="CONTROL_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_CREDENTIAL_DATA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="RESOURCE_SYSTEM_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="TOKEN_CODE" Type="varchar2" Nullable="false" MaxLength="200" />
+    <Property Name="DATA_KEY" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="DATA" Type="clob" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ACS_MODULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODULE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="MODULE_LINK" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="IS_VISIBLE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="NUM_ORDER" Type="number" Nullable="true" Precision="19" />
+    <Property Name="IS_LEAF" Type="number" Nullable="true" Precision="5" />
+    <Property Name="PARENT_ID" Type="number" Nullable="true" Precision="19" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="MODULE_GROUP_ID" Type="number" Nullable="true" Precision="19" />
+    <Property Name="ICON_LINK" Type="varchar2" Nullable="true" MaxLength="1000" />
+    <Property Name="IS_ANONYMOUS" Type="number" Nullable="true" Precision="5" />
+    <Property Name="MODULE_URL" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="VIR_MODULE_LINK" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="VIDEO_URLS" Type="varchar2" Nullable="true" MaxLength="4000" />
+    <Property Name="IS_NOT_SHOW_DIALOG" Type="number" Nullable="true" Precision="5" />
+  </EntityType>
+  <EntityType Name="ACS_MODULE_GROUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODULE_GROUP_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="MODULE_GROUP_NAME" Type="varchar2" Nullable="false" MaxLength="200" />
+    <Property Name="NUM_ORDER" Type="number" Nullable="true" Precision="19" />
+    <Property Name="ICON_LINK" Type="varchar2" Nullable="true" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ACS_MODULE_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODULE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_OTP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="OTP_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="OTP_TYPE" Type="number" Nullable="false" Precision="5" />
+    <Property Name="EXPIRE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="LOGINAME" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="OTP_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="EMAIL" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="MOBILE" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="VIR_EXPIRE_DATE" Type="number" Nullable="true" Precision="38" />
+  </EntityType>
+  <EntityType Name="ACS_OTP_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="OPT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="OPT_TYPE_NAME" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="EXPIRE_TIME_NUMBER" Type="number" Nullable="true" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ROLE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="ROLE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="IS_FULL" Type="number" Nullable="true" Precision="5" />
+  </EntityType>
+  <EntityType Name="ACS_ROLE_AUTHOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="AUTHOR_SYSTEM_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_ROLE_BASE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ROLE_BASE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_ROLE_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="USER_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="ACS_TOKEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="TOKEN_CODE" Type="varchar2" Nullable="false" MaxLength="2500" />
+    <Property Name="RENEW_CODE" Type="varchar2" Nullable="false" MaxLength="200" />
+    <Property Name="EXPIRE_TIME" Type="number" Nullable="false" Precision="19" />
+    <Property Name="APP_VERSION" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="MACHINE_NAME" Type="varchar2" Nullable="true" MaxLength="1000" />
+    <Property Name="LAST_ACCESS_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="LOGIN_TIME" Type="number" Nullable="false" Precision="19" />
+    <Property Name="LOGIN_ADDRESS" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="LOGIN_NAME" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="USER_NAME" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MOBILE" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="AUTHENTICATION_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="AUTHOR_SYSTEM_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ACS_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="PASSWORD" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="EMAIL" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="MOBILE" Type="varchar2" Nullable="true" MaxLength="20" />
+    <Property Name="G_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="V_ACS_APPLICATION_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+    <Property Name="APPLICATION_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="ROLE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="ROLE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_ACS_CONTROL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="CONTROL_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="CONTROL_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="IS_ANONYMOUS" Type="number" Nullable="true" Precision="5" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+    <Property Name="APPLICATION_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_ACS_CONTROL_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="CONTROL_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="CONTROL_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+    <Property Name="CONTROL_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="ROLE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="ROLE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_ACS_MODULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODULE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="MODULE_LINK" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="IS_VISIBLE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="NUM_ORDER" Type="number" Nullable="true" Precision="19" />
+    <Property Name="IS_LEAF" Type="number" Nullable="true" Precision="5" />
+    <Property Name="PARENT_ID" Type="number" Nullable="true" Precision="19" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="MODULE_GROUP_ID" Type="number" Nullable="true" Precision="19" />
+    <Property Name="ICON_LINK" Type="varchar2" Nullable="true" MaxLength="1000" />
+    <Property Name="IS_ANONYMOUS" Type="number" Nullable="true" Precision="5" />
+    <Property Name="MODULE_URL" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="VIR_MODULE_LINK" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="VIDEO_URLS" Type="varchar2" Nullable="true" MaxLength="4000" />
+    <Property Name="IS_NOT_SHOW_DIALOG" Type="number" Nullable="true" Precision="5" />
+    <Property Name="MODULE_GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="8" />
+    <Property Name="MODULE_GROUP_NAME" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+    <Property Name="APPLICATION_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PARENT_NAME" Type="varchar2" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_ACS_MODULE_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODULE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="MODULE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="MODULE_LINK" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="APPLICATION_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="MODULE_URL" Type="varchar2" Nullable="true" MaxLength="200" />
+    <Property Name="APPLICATION_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+    <Property Name="APPLICATION_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="ROLE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="ROLE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_ACS_ROLE_BASE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ROLE_BASE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="BASE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="BASE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="ROLE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="ROLE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="V_ACS_ROLE_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="MODIFY_TIME" Type="number" Nullable="true" Precision="19" />
+    <Property Name="CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="IS_DELETE" Type="number" Nullable="true" Precision="5" />
+    <Property Name="GROUP_CODE" Type="varchar2" Nullable="true" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="USER_ID" Type="number" Nullable="false" Precision="19" />
+    <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar2" Nullable="true" MaxLength="100" />
+    <Property Name="ROLE_CODE" Type="varchar2" Nullable="false" MaxLength="8" />
+    <Property Name="ROLE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Association Name="ACS_ACTIVITY_LOG_FK1">
+    <End Role="ACS_ACTIVITY_TYPE" Type="DataModels.Store.ACS_ACTIVITY_TYPE" Multiplicity="1" />
+    <End Role="ACS_ACTIVITY_LOG" Type="DataModels.Store.ACS_ACTIVITY_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ACTIVITY_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_ACTIVITY_LOG">
+        <PropertyRef Name="ACTIVITY_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_APPLICATION_ROLE_FK1">
+    <End Role="ACS_APPLICATION" Type="DataModels.Store.ACS_APPLICATION" Multiplicity="1" />
+    <End Role="ACS_APPLICATION_ROLE" Type="DataModels.Store.ACS_APPLICATION_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_APPLICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_APPLICATION_ROLE">
+        <PropertyRef Name="APPLICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_CONTROL_FK1">
+    <End Role="ACS_APPLICATION" Type="DataModels.Store.ACS_APPLICATION" Multiplicity="1" />
+    <End Role="ACS_CONTROL" Type="DataModels.Store.ACS_CONTROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_APPLICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_CONTROL">
+        <PropertyRef Name="APPLICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_MODULE_FK1">
+    <End Role="ACS_APPLICATION" Type="DataModels.Store.ACS_APPLICATION" Multiplicity="1" />
+    <End Role="ACS_MODULE" Type="DataModels.Store.ACS_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_APPLICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_MODULE">
+        <PropertyRef Name="APPLICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_APPLICATION_ROLE_FK2">
+    <End Role="ACS_ROLE" Type="DataModels.Store.ACS_ROLE" Multiplicity="1" />
+    <End Role="ACS_APPLICATION_ROLE" Type="DataModels.Store.ACS_APPLICATION_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_APPLICATION_ROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_CONTROL_ROLE_FK1">
+    <End Role="ACS_CONTROL" Type="DataModels.Store.ACS_CONTROL" Multiplicity="1" />
+    <End Role="ACS_CONTROL_ROLE" Type="DataModels.Store.ACS_CONTROL_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_CONTROL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_CONTROL_ROLE">
+        <PropertyRef Name="CONTROL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_CONTROL_ROLE_FK2">
+    <End Role="ACS_ROLE" Type="DataModels.Store.ACS_ROLE" Multiplicity="1" />
+    <End Role="ACS_CONTROL_ROLE" Type="DataModels.Store.ACS_CONTROL_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_CONTROL_ROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_MODULE_FK2">
+    <End Role="ACS_MODULE_GROUP" Type="DataModels.Store.ACS_MODULE_GROUP" Multiplicity="0..1" />
+    <End Role="ACS_MODULE" Type="DataModels.Store.ACS_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_MODULE_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_MODULE">
+        <PropertyRef Name="MODULE_GROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_MODULE_ROLE_FK1">
+    <End Role="ACS_MODULE" Type="DataModels.Store.ACS_MODULE" Multiplicity="1" />
+    <End Role="ACS_MODULE_ROLE" Type="DataModels.Store.ACS_MODULE_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_MODULE_ROLE">
+        <PropertyRef Name="MODULE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_MODULE_ROLE_FK2">
+    <End Role="ACS_ROLE" Type="DataModels.Store.ACS_ROLE" Multiplicity="1" />
+    <End Role="ACS_MODULE_ROLE" Type="DataModels.Store.ACS_MODULE_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_MODULE_ROLE">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_OTP_FK1">
+    <End Role="ACS_OTP_TYPE" Type="DataModels.Store.ACS_OTP_TYPE" Multiplicity="1" />
+    <End Role="ACS_OTP" Type="DataModels.Store.ACS_OTP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_OTP_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_OTP">
+        <PropertyRef Name="OTP_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_ROLE_BASE_FK1">
+    <End Role="ACS_ROLE" Type="DataModels.Store.ACS_ROLE" Multiplicity="1" />
+    <End Role="ACS_ROLE_BASE" Type="DataModels.Store.ACS_ROLE_BASE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_ROLE_BASE">
+        <PropertyRef Name="ROLE_BASE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_ROLE_BASE_FK2">
+    <End Role="ACS_ROLE" Type="DataModels.Store.ACS_ROLE" Multiplicity="1" />
+    <End Role="ACS_ROLE_BASE" Type="DataModels.Store.ACS_ROLE_BASE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_ROLE_BASE">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_ROLE_USER_FK1">
+    <End Role="ACS_ROLE" Type="DataModels.Store.ACS_ROLE" Multiplicity="1" />
+    <End Role="ACS_ROLE_USER" Type="DataModels.Store.ACS_ROLE_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_ROLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_ROLE_USER">
+        <PropertyRef Name="ROLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ACS_ROLE_USER_FK2">
+    <End Role="ACS_USER" Type="DataModels.Store.ACS_USER" Multiplicity="1" />
+    <End Role="ACS_ROLE_USER" Type="DataModels.Store.ACS_ROLE_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACS_USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACS_ROLE_USER">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HTCEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="HTC_EXPENSE" EntityType="DataModels.HTC_EXPENSE" />
+    <EntitySet Name="HTC_EXPENSE_TYPE" EntityType="DataModels.HTC_EXPENSE_TYPE" />
+    <EntitySet Name="HTC_PERIOD" EntityType="DataModels.HTC_PERIOD" />
+    <EntitySet Name="HTC_PERIOD_DEPARTMENT" EntityType="DataModels.HTC_PERIOD_DEPARTMENT" />
+    <EntitySet Name="HTC_REPARTITION_RATIO" EntityType="DataModels.HTC_REPARTITION_RATIO" />
+    <EntitySet Name="HTC_REPARTITION_TYPE" EntityType="DataModels.HTC_REPARTITION_TYPE" />
+    <EntitySet Name="HTC_REVENUE" EntityType="DataModels.HTC_REVENUE" />
+    <EntitySet Name="V_HTC_EXPENSE" EntityType="DataModels.V_HTC_EXPENSE" />
+    <EntitySet Name="V_HTC_PERIOD_DEPARTMENT" EntityType="DataModels.V_HTC_PERIOD_DEPARTMENT" />
+    <EntitySet Name="V_HTC_REPARTITION_RATIO" EntityType="DataModels.V_HTC_REPARTITION_RATIO" />
+    <AssociationSet Name="HTC_EXPENSE_FK1" Association="DataModels.HTC_EXPENSE_FK1">
+      <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+      <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_EXPENSE_FK2" Association="DataModels.HTC_EXPENSE_FK2">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_EXPENSE_TYPE_FK1" Association="DataModels.HTC_EXPENSE_TYPE_FK1">
+      <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+      <End Role="HTC_EXPENSE_TYPE1" EntitySet="HTC_EXPENSE_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_PERIOD_DEPARTMENT_FK1" Association="DataModels.HTC_PERIOD_DEPARTMENT_FK1">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_PERIOD_DEPARTMENT" EntitySet="HTC_PERIOD_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_REPARTITION_RATIO_FK1" Association="DataModels.HTC_REPARTITION_RATIO_FK1">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_REVENUE_FK1" Association="DataModels.HTC_REVENUE_FK1">
+      <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+      <End Role="HTC_REVENUE" EntitySet="HTC_REVENUE" />
+    </AssociationSet>
+    <AssociationSet Name="HTC_REPARTITION_RATIO_FK2" Association="DataModels.HTC_REPARTITION_RATIO_FK2">
+      <End Role="HTC_REPARTITION_TYPE" EntitySet="HTC_REPARTITION_TYPE" />
+      <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HTC_EXPENSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_TIME" Type="Int64" Nullable="false" />
+    <Property Name="EXPENSE_TYPE_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRICE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="HTC_EXPENSE_TYPE" Relationship="DataModels.HTC_EXPENSE_FK1" FromRole="HTC_EXPENSE" ToRole="HTC_EXPENSE_TYPE" />
+    <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_EXPENSE_FK2" FromRole="HTC_EXPENSE" ToRole="HTC_PERIOD" />
+  </EntityType>
+  <EntityType Name="HTC_EXPENSE_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_TYPE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PARENT_ID" Type="Int64" />
+    <Property Name="IS_ALLOW_EXPENSE" Type="Int16" />
+    <Property Name="IS_PLUS" Type="Int16" />
+    <NavigationProperty Name="HTC_EXPENSE" Relationship="DataModels.HTC_EXPENSE_FK1" FromRole="HTC_EXPENSE_TYPE" ToRole="HTC_EXPENSE" />
+    <NavigationProperty Name="HTC_EXPENSE_TYPE1" Relationship="DataModels.HTC_EXPENSE_TYPE_FK1" FromRole="HTC_EXPENSE_TYPE" ToRole="HTC_EXPENSE_TYPE1" />
+    <NavigationProperty Name="HTC_EXPENSE_TYPE2" Relationship="DataModels.HTC_EXPENSE_TYPE_FK1" FromRole="HTC_EXPENSE_TYPE1" ToRole="HTC_EXPENSE_TYPE" />
+  </EntityType>
+  <EntityType Name="HTC_PERIOD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="FROM_TIME" Type="Int64" />
+    <Property Name="TO_TIME" Type="Int64" />
+    <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="YEAR" Type="Int16" />
+    <Property Name="MONTH" Type="Int16" />
+    <NavigationProperty Name="HTC_EXPENSE" Relationship="DataModels.HTC_EXPENSE_FK2" FromRole="HTC_PERIOD" ToRole="HTC_EXPENSE" />
+    <NavigationProperty Name="HTC_PERIOD_DEPARTMENT" Relationship="DataModels.HTC_PERIOD_DEPARTMENT_FK1" FromRole="HTC_PERIOD" ToRole="HTC_PERIOD_DEPARTMENT" />
+    <NavigationProperty Name="HTC_REPARTITION_RATIO" Relationship="DataModels.HTC_REPARTITION_RATIO_FK1" FromRole="HTC_PERIOD" ToRole="HTC_REPARTITION_RATIO" />
+    <NavigationProperty Name="HTC_REVENUE" Relationship="DataModels.HTC_REVENUE_FK1" FromRole="HTC_PERIOD" ToRole="HTC_REVENUE" />
+  </EntityType>
+  <EntityType Name="HTC_PERIOD_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LABOR_AMOUNT" Type="Int64" />
+    <Property Name="CLINICAL_DAY_AMOUNT" Type="Int64" />
+    <Property Name="CLINICAL_AMOUNT" Type="Int64" />
+    <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="Int64" />
+    <Property Name="END_TREATMENT_AMOUNT" Type="Int64" />
+    <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_PERIOD_DEPARTMENT_FK1" FromRole="HTC_PERIOD_DEPARTMENT" ToRole="HTC_PERIOD" />
+  </EntityType>
+  <EntityType Name="HTC_REPARTITION_RATIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="REPARTITION_TYPE_ID" Type="Int64" Nullable="false" />
+    <Property Name="RATIO" Type="Decimal" Nullable="false" Precision="5" Scale="4" />
+    <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_REPARTITION_RATIO_FK1" FromRole="HTC_REPARTITION_RATIO" ToRole="HTC_PERIOD" />
+    <NavigationProperty Name="HTC_REPARTITION_TYPE" Relationship="DataModels.HTC_REPARTITION_RATIO_FK2" FromRole="HTC_REPARTITION_RATIO" ToRole="HTC_REPARTITION_TYPE" />
+  </EntityType>
+  <EntityType Name="HTC_REPARTITION_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REPARTITION_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="REPARTITION_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IS_HAS_NOT_RATIO" Type="Int16" />
+    <NavigationProperty Name="HTC_REPARTITION_RATIO" Relationship="DataModels.HTC_REPARTITION_RATIO_FK2" FromRole="HTC_REPARTITION_TYPE" ToRole="HTC_REPARTITION_RATIO" />
+  </EntityType>
+  <EntityType Name="HTC_REVENUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REVENUE_CODE" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="REVENUE_TIME" Type="Int64" Nullable="false" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="AMOUNT" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
+    <Property Name="PRICE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="SERVICE_CODE" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="PATIENT_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="PATIENT_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_UNIT_CODE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_UNIT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_TYPE_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_TYPE_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SERE_SERV_ID" Type="Int64" />
+    <Property Name="HEIN_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="VIR_PATIENT_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_TOTAL_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_TOTAL_HEIN_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_TOTAL_PATIENT_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PATIENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PATIENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="Int64" />
+    <Property Name="IN_TIME" Type="Int64" />
+    <Property Name="OUT_TIME" Type="Int64" />
+    <Property Name="XANHPON_SYMBOL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="BILL_NUMBER" Type="Int64" />
+    <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_REVENUE_FK1" FromRole="HTC_REVENUE" ToRole="HTC_PERIOD" />
+  </EntityType>
+  <EntityType Name="V_HTC_EXPENSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_TIME" Type="Int64" Nullable="false" />
+    <Property Name="EXPENSE_TYPE_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRICE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_TYPE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EXPENSE_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PARENT_ID" Type="Int64" />
+    <Property Name="IS_ALLOW_EXPENSE" Type="Int16" />
+    <Property Name="IS_PLUS" Type="Int16" />
+    <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="FROM_TIME" Type="Int64" />
+    <Property Name="TO_TIME" Type="Int64" />
+    <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_HTC_PERIOD_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LABOR_AMOUNT" Type="Int64" />
+    <Property Name="CLINICAL_DAY_AMOUNT" Type="Int64" />
+    <Property Name="CLINICAL_AMOUNT" Type="Int64" />
+    <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="Int64" />
+    <Property Name="END_TREATMENT_AMOUNT" Type="Int64" />
+    <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="FROM_TIME" Type="Int64" />
+    <Property Name="TO_TIME" Type="Int64" />
+    <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_HTC_REPARTITION_RATIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+    <Property Name="REPARTITION_TYPE_ID" Type="Int64" Nullable="false" />
+    <Property Name="RATIO" Type="Decimal" Nullable="false" Precision="5" Scale="4" />
+    <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REPARTITION_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="REPARTITION_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="HTC_EXPENSE_FK1">
+    <End Role="HTC_EXPENSE_TYPE" Type="DataModels.HTC_EXPENSE_TYPE" Multiplicity="1" />
+    <End Role="HTC_EXPENSE" Type="DataModels.HTC_EXPENSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_EXPENSE_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_EXPENSE">
+        <PropertyRef Name="EXPENSE_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_EXPENSE_FK2">
+    <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_EXPENSE" Type="DataModels.HTC_EXPENSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_EXPENSE">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_EXPENSE_TYPE_FK1">
+    <End Role="HTC_EXPENSE_TYPE" Type="DataModels.HTC_EXPENSE_TYPE" Multiplicity="0..1" />
+    <End Role="HTC_EXPENSE_TYPE1" Type="DataModels.HTC_EXPENSE_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_EXPENSE_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_EXPENSE_TYPE1">
+        <PropertyRef Name="PARENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_PERIOD_DEPARTMENT_FK1">
+    <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_PERIOD_DEPARTMENT" Type="DataModels.HTC_PERIOD_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_PERIOD_DEPARTMENT">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_REPARTITION_RATIO_FK1">
+    <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_REPARTITION_RATIO" Type="DataModels.HTC_REPARTITION_RATIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_REPARTITION_RATIO">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_REVENUE_FK1">
+    <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+    <End Role="HTC_REVENUE" Type="DataModels.HTC_REVENUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_REVENUE">
+        <PropertyRef Name="PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HTC_REPARTITION_RATIO_FK2">
+    <End Role="HTC_REPARTITION_TYPE" Type="DataModels.HTC_REPARTITION_TYPE" Multiplicity="1" />
+    <End Role="HTC_REPARTITION_RATIO" Type="DataModels.HTC_REPARTITION_RATIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTC_REPARTITION_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HTC_REPARTITION_RATIO">
+        <PropertyRef Name="REPARTITION_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TYTDataModelsStoreContainer" CdmEntityContainer="TYTEntities">
+    <EntitySetMapping Name="TYT_DEATH">
+      <EntityTypeMapping TypeName="DataModels.TYT_DEATH">
+        <MappingFragment StoreEntitySet="TYT_DEATH">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="DEATH_TIME" ColumnName="DEATH_TIME" />
+          <ScalarProperty Name="DEATH_LOCATION_TYPE_ID" ColumnName="DEATH_LOCATION_TYPE_ID" />
+          <ScalarProperty Name="IS_CBYT_CARE" ColumnName="IS_CBYT_CARE" />
+          <ScalarProperty Name="DEATH_CAUSE" ColumnName="DEATH_CAUSE" />
+          <ScalarProperty Name="COLLECTOR" ColumnName="COLLECTOR" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_FETUS_ABORTION">
+      <EntityTypeMapping TypeName="DataModels.TYT_FETUS_ABORTION">
+        <MappingFragment StoreEntitySet="TYT_FETUS_ABORTION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+          <ScalarProperty Name="IS_SINGLE" ColumnName="IS_SINGLE" />
+          <ScalarProperty Name="PARA_CHILD_COUNT" ColumnName="PARA_CHILD_COUNT" />
+          <ScalarProperty Name="LAST_MENSES_TIME" ColumnName="LAST_MENSES_TIME" />
+          <ScalarProperty Name="DIAGNOSE_TEST" ColumnName="DIAGNOSE_TEST" />
+          <ScalarProperty Name="ABORTION_METHOD" ColumnName="ABORTION_METHOD" />
+          <ScalarProperty Name="SM_RESULT" ColumnName="SM_RESULT" />
+          <ScalarProperty Name="OBSTETRIC_COMPLICATION" ColumnName="OBSTETRIC_COMPLICATION" />
+          <ScalarProperty Name="IS_DEATH" ColumnName="IS_DEATH" />
+          <ScalarProperty Name="EXECUTE_NAME" ColumnName="EXECUTE_NAME" />
+          <ScalarProperty Name="EXAM_AFTER_TWO_WEEK" ColumnName="EXAM_AFTER_TWO_WEEK" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ABORTION_TIME" ColumnName="ABORTION_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_FETUS_BORN">
+      <EntityTypeMapping TypeName="DataModels.TYT_FETUS_BORN">
+        <MappingFragment StoreEntitySet="TYT_FETUS_BORN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+          <ScalarProperty Name="IS_FETUS_MANAGE" ColumnName="IS_FETUS_MANAGE" />
+          <ScalarProperty Name="IS_UV_FULL" ColumnName="IS_UV_FULL" />
+          <ScalarProperty Name="CHECK_CASE" ColumnName="CHECK_CASE" />
+          <ScalarProperty Name="IS_HIV_BEFORE" ColumnName="IS_HIV_BEFORE" />
+          <ScalarProperty Name="IS_HIV_BORN" ColumnName="IS_HIV_BORN" />
+          <ScalarProperty Name="PARA_NORMAL_COUNT" ColumnName="PARA_NORMAL_COUNT" />
+          <ScalarProperty Name="PARA_PREMATURELY_COUNT" ColumnName="PARA_PREMATURELY_COUNT" />
+          <ScalarProperty Name="PARA_MISCARRIAGE_COUNT" ColumnName="PARA_MISCARRIAGE_COUNT" />
+          <ScalarProperty Name="PARA_CHILD_COUNT" ColumnName="PARA_CHILD_COUNT" />
+          <ScalarProperty Name="BORN_METHOD" ColumnName="BORN_METHOD" />
+          <ScalarProperty Name="OBSTETRIC_COMPLICATION" ColumnName="OBSTETRIC_COMPLICATION" />
+          <ScalarProperty Name="IS_DEATH" ColumnName="IS_DEATH" />
+          <ScalarProperty Name="CHILD_GENDER_ID" ColumnName="CHILD_GENDER_ID" />
+          <ScalarProperty Name="CHILD_WEIGHT" ColumnName="CHILD_WEIGHT" />
+          <ScalarProperty Name="CHILD_STATUS" ColumnName="CHILD_STATUS" />
+          <ScalarProperty Name="IS_CHILD_DEATH" ColumnName="IS_CHILD_DEATH" />
+          <ScalarProperty Name="BORN_PLACE" ColumnName="BORN_PLACE" />
+          <ScalarProperty Name="MIDWIFE_NAME" ColumnName="MIDWIFE_NAME" />
+          <ScalarProperty Name="IS_BREASTFEEDING_FIRST_HOUR" ColumnName="IS_BREASTFEEDING_FIRST_HOUR" />
+          <ScalarProperty Name="IS_K1" ColumnName="IS_K1" />
+          <ScalarProperty Name="FIRST_WEEK_EXAM" ColumnName="FIRST_WEEK_EXAM" />
+          <ScalarProperty Name="EXAM_742" ColumnName="EXAM_742" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_FETUS_EXAM">
+      <EntityTypeMapping TypeName="DataModels.TYT_FETUS_EXAM">
+        <MappingFragment StoreEntitySet="TYT_FETUS_EXAM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+          <ScalarProperty Name="LAST_MENSES_TIME" ColumnName="LAST_MENSES_TIME" />
+          <ScalarProperty Name="WEEK" ColumnName="WEEK" />
+          <ScalarProperty Name="BORN_TIME" ColumnName="BORN_TIME" />
+          <ScalarProperty Name="FETUS_COUNT" ColumnName="FETUS_COUNT" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+          <ScalarProperty Name="BLOOD_PRESSURE_MAX" ColumnName="BLOOD_PRESSURE_MAX" />
+          <ScalarProperty Name="BLOOD_PRESSURE_MIN" ColumnName="BLOOD_PRESSURE_MIN" />
+          <ScalarProperty Name="UTERUS" ColumnName="UTERUS" />
+          <ScalarProperty Name="BELLY" ColumnName="BELLY" />
+          <ScalarProperty Name="PELVIC" ColumnName="PELVIC" />
+          <ScalarProperty Name="BLOOD" ColumnName="BLOOD" />
+          <ScalarProperty Name="PROTEIN" ColumnName="PROTEIN" />
+          <ScalarProperty Name="IS_HIV_TEST" ColumnName="IS_HIV_TEST" />
+          <ScalarProperty Name="OTHER_TEST" ColumnName="OTHER_TEST" />
+          <ScalarProperty Name="BORN_GUESS" ColumnName="BORN_GUESS" />
+          <ScalarProperty Name="UV_COUNT" ColumnName="UV_COUNT" />
+          <ScalarProperty Name="IS_FOLIC" ColumnName="IS_FOLIC" />
+          <ScalarProperty Name="FETUS_HEART" ColumnName="FETUS_HEART" />
+          <ScalarProperty Name="FETUS_POSITION" ColumnName="FETUS_POSITION" />
+          <ScalarProperty Name="DOCTOR_LOGINNAME" ColumnName="DOCTOR_LOGINNAME" />
+          <ScalarProperty Name="DOCTOR_USERNAME" ColumnName="DOCTOR_USERNAME" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="EXAM_TIME" ColumnName="EXAM_TIME" />
+          <ScalarProperty Name="HEALTH_HISTORY" ColumnName="HEALTH_HISTORY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_GDSK">
+      <EntityTypeMapping TypeName="DataModels.TYT_GDSK">
+        <MappingFragment StoreEntitySet="TYT_GDSK">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="GDSK_TIME" ColumnName="GDSK_TIME" />
+          <ScalarProperty Name="GDSK_PLACE" ColumnName="GDSK_PLACE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="FORM" ColumnName="FORM" />
+          <ScalarProperty Name="TARGET" ColumnName="TARGET" />
+          <ScalarProperty Name="AUDIENCE_COUNT" ColumnName="AUDIENCE_COUNT" />
+          <ScalarProperty Name="MEDIA" ColumnName="MEDIA" />
+          <ScalarProperty Name="AMOUNT_OF_TIME" ColumnName="AMOUNT_OF_TIME" />
+          <ScalarProperty Name="EXECUTE_NAME" ColumnName="EXECUTE_NAME" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_HIV">
+      <EntityTypeMapping TypeName="DataModels.TYT_HIV">
+        <MappingFragment StoreEntitySet="TYT_HIV">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="OBJECT_TYPE" ColumnName="OBJECT_TYPE" />
+          <ScalarProperty Name="FETUS_TIME" ColumnName="FETUS_TIME" />
+          <ScalarProperty Name="HIV_DIAGNOSIS_TIME" ColumnName="HIV_DIAGNOSIS_TIME" />
+          <ScalarProperty Name="HIV_DIAGNOSIS_PLACE" ColumnName="HIV_DIAGNOSIS_PLACE" />
+          <ScalarProperty Name="ARV_PLACE" ColumnName="ARV_PLACE" />
+          <ScalarProperty Name="DEATH_TIME" ColumnName="DEATH_TIME" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_KHH">
+      <EntityTypeMapping TypeName="DataModels.TYT_KHH">
+        <MappingFragment StoreEntitySet="TYT_KHH">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+          <ScalarProperty Name="IS_SINGLE" ColumnName="IS_SINGLE" />
+          <ScalarProperty Name="IS_IUCD" ColumnName="IS_IUCD" />
+          <ScalarProperty Name="IS_STERILIZE" ColumnName="IS_STERILIZE" />
+          <ScalarProperty Name="IS_PILL_V" ColumnName="IS_PILL_V" />
+          <ScalarProperty Name="IS_PILL_T" ColumnName="IS_PILL_T" />
+          <ScalarProperty Name="IS_PILL_C" ColumnName="IS_PILL_C" />
+          <ScalarProperty Name="IS_CONDOM" ColumnName="IS_CONDOM" />
+          <ScalarProperty Name="EXECUTE_NAME" ColumnName="EXECUTE_NAME" />
+          <ScalarProperty Name="OBSTETRIC_COMPLICATION" ColumnName="OBSTETRIC_COMPLICATION" />
+          <ScalarProperty Name="IS_DEATH" ColumnName="IS_DEATH" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_MALARIA">
+      <EntityTypeMapping TypeName="DataModels.TYT_MALARIA">
+        <MappingFragment StoreEntitySet="TYT_MALARIA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="IS_HAS_FETUS" ColumnName="IS_HAS_FETUS" />
+          <ScalarProperty Name="IS_FEVER" ColumnName="IS_FEVER" />
+          <ScalarProperty Name="TEST_TYPE" ColumnName="TEST_TYPE" />
+          <ScalarProperty Name="TEST_RESULT" ColumnName="TEST_RESULT" />
+          <ScalarProperty Name="DIAGNOSE" ColumnName="DIAGNOSE" />
+          <ScalarProperty Name="TREATMENT_RESULT" ColumnName="TREATMENT_RESULT" />
+          <ScalarProperty Name="MEDICINE" ColumnName="MEDICINE" />
+          <ScalarProperty Name="MEDICINE_CTDT" ColumnName="MEDICINE_CTDT" />
+          <ScalarProperty Name="DIAGNOSE_TIME" ColumnName="DIAGNOSE_TIME" />
+          <ScalarProperty Name="DIAGNOSE_PLACE" ColumnName="DIAGNOSE_PLACE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_NERVES">
+      <EntityTypeMapping TypeName="DataModels.TYT_NERVES">
+        <MappingFragment StoreEntitySet="TYT_NERVES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="DIAGNOSE_TTPL" ColumnName="DIAGNOSE_TTPL" />
+          <ScalarProperty Name="DIAGNOSE_DK" ColumnName="DIAGNOSE_DK" />
+          <ScalarProperty Name="DIAGNOSE_TC" ColumnName="DIAGNOSE_TC" />
+          <ScalarProperty Name="PHCN_RESULT" ColumnName="PHCN_RESULT" />
+          <ScalarProperty Name="IS_HOME_CHECK" ColumnName="IS_HOME_CHECK" />
+          <ScalarProperty Name="MEDICINE_MONITOR" ColumnName="MEDICINE_MONITOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_TUBERCULOSIS">
+      <EntityTypeMapping TypeName="DataModels.TYT_TUBERCULOSIS">
+        <MappingFragment StoreEntitySet="TYT_TUBERCULOSIS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="TYT_IN_TIME" ColumnName="TYT_IN_TIME" />
+          <ScalarProperty Name="DTCKS_CODE" ColumnName="DTCKS_CODE" />
+          <ScalarProperty Name="DISEASE_TYPE" ColumnName="DISEASE_TYPE" />
+          <ScalarProperty Name="TREATMENT_RESULT" ColumnName="TREATMENT_RESULT" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_UNINFECT">
+      <EntityTypeMapping TypeName="DataModels.TYT_UNINFECT">
+        <MappingFragment StoreEntitySet="TYT_UNINFECT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+          <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+          <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+          <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+          <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+          <ScalarProperty Name="ICD_CODE" ColumnName="ICD_CODE" />
+          <ScalarProperty Name="ICD_NAME" ColumnName="ICD_NAME" />
+          <ScalarProperty Name="DIAGNOSIS_TIME" ColumnName="DIAGNOSIS_TIME" />
+          <ScalarProperty Name="DIAGNOSIS_PLACE" ColumnName="DIAGNOSIS_PLACE" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_UNINFECT_ICD">
+      <EntityTypeMapping TypeName="DataModels.TYT_UNINFECT_ICD">
+        <MappingFragment StoreEntitySet="TYT_UNINFECT_ICD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="UNINFECT_ICD_CODE" ColumnName="UNINFECT_ICD_CODE" />
+          <ScalarProperty Name="UNINFECT_ICD_NAME" ColumnName="UNINFECT_ICD_NAME" />
+          <ScalarProperty Name="UNINFECT_ICD_GROUP_ID" ColumnName="UNINFECT_ICD_GROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYT_UNINFECT_ICD_GROUP">
+      <EntityTypeMapping TypeName="DataModels.TYT_UNINFECT_ICD_GROUP">
+        <MappingFragment StoreEntitySet="TYT_UNINFECT_ICD_GROUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="UNINFECT_ICD_GROUP_CODE" ColumnName="UNINFECT_ICD_GROUP_CODE" />
+          <ScalarProperty Name="UNINFECT_ICD_GROUP_NAME" ColumnName="UNINFECT_ICD_GROUP_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

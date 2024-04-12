@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HTCDataModelsStoreContainer" CdmEntityContainer="HTCEntities">
+    <EntitySetMapping Name="HTC_EXPENSE">
+      <EntityTypeMapping TypeName="DataModels.HTC_EXPENSE">
+        <MappingFragment StoreEntitySet="HTC_EXPENSE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="EXPENSE_CODE" ColumnName="EXPENSE_CODE" />
+          <ScalarProperty Name="EXPENSE_TIME" ColumnName="EXPENSE_TIME" />
+          <ScalarProperty Name="EXPENSE_TYPE_ID" ColumnName="EXPENSE_TYPE_ID" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTC_EXPENSE_TYPE">
+      <EntityTypeMapping TypeName="DataModels.HTC_EXPENSE_TYPE">
+        <MappingFragment StoreEntitySet="HTC_EXPENSE_TYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="EXPENSE_TYPE_CODE" ColumnName="EXPENSE_TYPE_CODE" />
+          <ScalarProperty Name="EXPENSE_TYPE_NAME" ColumnName="EXPENSE_TYPE_NAME" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="IS_ALLOW_EXPENSE" ColumnName="IS_ALLOW_EXPENSE" />
+          <ScalarProperty Name="IS_PLUS" ColumnName="IS_PLUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTC_PERIOD">
+      <EntityTypeMapping TypeName="DataModels.HTC_PERIOD">
+        <MappingFragment StoreEntitySet="HTC_PERIOD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+          <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+          <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+          <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+          <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTC_PERIOD_DEPARTMENT">
+      <EntityTypeMapping TypeName="DataModels.HTC_PERIOD_DEPARTMENT">
+        <MappingFragment StoreEntitySet="HTC_PERIOD_DEPARTMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="LABOR_AMOUNT" ColumnName="LABOR_AMOUNT" />
+          <ScalarProperty Name="CLINICAL_DAY_AMOUNT" ColumnName="CLINICAL_DAY_AMOUNT" />
+          <ScalarProperty Name="CLINICAL_AMOUNT" ColumnName="CLINICAL_AMOUNT" />
+          <ScalarProperty Name="FROM_EXAM_CLINICAL_AMOUNT" ColumnName="FROM_EXAM_CLINICAL_AMOUNT" />
+          <ScalarProperty Name="END_TREATMENT_AMOUNT" ColumnName="END_TREATMENT_AMOUNT" />
+          <ScalarProperty Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" ColumnName="VIR_FROM_OTHER_CLINICAL_AMOUNT" />
+          <ScalarProperty Name="VIR_NOT_END_TREATMENT_AMOUNT" ColumnName="VIR_NOT_END_TREATMENT_AMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTC_REPARTITION_RATIO">
+      <EntityTypeMapping TypeName="DataModels.HTC_REPARTITION_RATIO">
+        <MappingFragment StoreEntitySet="HTC_REPARTITION_RATIO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="REPARTITION_TYPE_ID" ColumnName="REPARTITION_TYPE_ID" />
+          <ScalarProperty Name="RATIO" ColumnName="RATIO" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTC_REPARTITION_TYPE">
+      <EntityTypeMapping TypeName="DataModels.HTC_REPARTITION_TYPE">
+        <MappingFragment StoreEntitySet="HTC_REPARTITION_TYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="REPARTITION_TYPE_CODE" ColumnName="REPARTITION_TYPE_CODE" />
+          <ScalarProperty Name="REPARTITION_TYPE_NAME" ColumnName="REPARTITION_TYPE_NAME" />
+          <ScalarProperty Name="IS_HAS_NOT_RATIO" ColumnName="IS_HAS_NOT_RATIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTC_REVENUE">
+      <EntityTypeMapping TypeName="DataModels.HTC_REVENUE">
+        <MappingFragment StoreEntitySet="HTC_REVENUE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="REVENUE_CODE" ColumnName="REVENUE_CODE" />
+          <ScalarProperty Name="REVENUE_TIME" ColumnName="REVENUE_TIME" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+          <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+          <ScalarProperty Name="PATIENT_TYPE_CODE" ColumnName="PATIENT_TYPE_CODE" />
+          <ScalarProperty Name="PATIENT_TYPE_NAME" ColumnName="PATIENT_TYPE_NAME" />
+          <ScalarProperty Name="SERVICE_TYPE_CODE" ColumnName="SERVICE_TYPE_CODE" />
+          <ScalarProperty Name="SERVICE_TYPE_NAME" ColumnName="SERVICE_TYPE_NAME" />
+          <ScalarProperty Name="SERVICE_UNIT_CODE" ColumnName="SERVICE_UNIT_CODE" />
+          <ScalarProperty Name="SERVICE_UNIT_NAME" ColumnName="SERVICE_UNIT_NAME" />
+          <ScalarProperty Name="REQUEST_DEPARTMENT_CODE" ColumnName="REQUEST_DEPARTMENT_CODE" />
+          <ScalarProperty Name="REQUEST_DEPARTMENT_NAME" ColumnName="REQUEST_DEPARTMENT_NAME" />
+          <ScalarProperty Name="REQUEST_ROOM_CODE" ColumnName="REQUEST_ROOM_CODE" />
+          <ScalarProperty Name="REQUEST_ROOM_NAME" ColumnName="REQUEST_ROOM_NAME" />
+          <ScalarProperty Name="REQUEST_ROOM_TYPE_CODE" ColumnName="REQUEST_ROOM_TYPE_CODE" />
+          <ScalarProperty Name="REQUEST_ROOM_TYPE_NAME" ColumnName="REQUEST_ROOM_TYPE_NAME" />
+          <ScalarProperty Name="REQUEST_LOGINNAME" ColumnName="REQUEST_LOGINNAME" />
+          <ScalarProperty Name="REQUEST_USERNAME" ColumnName="REQUEST_USERNAME" />
+          <ScalarProperty Name="EXECUTE_DEPARTMENT_CODE" ColumnName="EXECUTE_DEPARTMENT_CODE" />
+          <ScalarProperty Name="EXECUTE_DEPARTMENT_NAME" ColumnName="EXECUTE_DEPARTMENT_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+          <ScalarProperty Name="EXECUTE_ROOM_NAME" ColumnName="EXECUTE_ROOM_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_TYPE_CODE" ColumnName="EXECUTE_ROOM_TYPE_CODE" />
+          <ScalarProperty Name="EXECUTE_ROOM_TYPE_NAME" ColumnName="EXECUTE_ROOM_TYPE_NAME" />
+          <ScalarProperty Name="EXECUTE_LOGINNAME" ColumnName="EXECUTE_LOGINNAME" />
+          <ScalarProperty Name="EXECUTE_USERNAME" ColumnName="EXECUTE_USERNAME" />
+          <ScalarProperty Name="SERE_SERV_ID" ColumnName="SERE_SERV_ID" />
+          <ScalarProperty Name="HEIN_PRICE" ColumnName="HEIN_PRICE" />
+          <ScalarProperty Name="VIR_PATIENT_PRICE" ColumnName="VIR_PATIENT_PRICE" />
+          <ScalarProperty Name="VIR_TOTAL_PRICE" ColumnName="VIR_TOTAL_PRICE" />
+          <ScalarProperty Name="VIR_TOTAL_HEIN_PRICE" ColumnName="VIR_TOTAL_HEIN_PRICE" />
+          <ScalarProperty Name="VIR_TOTAL_PATIENT_PRICE" ColumnName="VIR_TOTAL_PATIENT_PRICE" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IN_TIME" ColumnName="IN_TIME" />
+          <ScalarProperty Name="OUT_TIME" ColumnName="OUT_TIME" />
+          <ScalarProperty Name="XANHPON_SYMBOL" ColumnName="XANHPON_SYMBOL" />
+          <ScalarProperty Name="BILL_NUMBER" ColumnName="BILL_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_HTC_EXPENSE">
+      <EntityTypeMapping TypeName="DataModels.V_HTC_EXPENSE">
+        <MappingFragment StoreEntitySet="V_HTC_EXPENSE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="EXPENSE_CODE" ColumnName="EXPENSE_CODE" />
+          <ScalarProperty Name="EXPENSE_TIME" ColumnName="EXPENSE_TIME" />
+          <ScalarProperty Name="EXPENSE_TYPE_ID" ColumnName="EXPENSE_TYPE_ID" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="EXPENSE_TYPE_CODE" ColumnName="EXPENSE_TYPE_CODE" />
+          <ScalarProperty Name="EXPENSE_TYPE_NAME" ColumnName="EXPENSE_TYPE_NAME" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="IS_ALLOW_EXPENSE" ColumnName="IS_ALLOW_EXPENSE" />
+          <ScalarProperty Name="IS_PLUS" ColumnName="IS_PLUS" />
+          <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+          <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+          <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+          <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_HTC_PERIOD_DEPARTMENT">
+      <EntityTypeMapping TypeName="DataModels.V_HTC_PERIOD_DEPARTMENT">
+        <MappingFragment StoreEntitySet="V_HTC_PERIOD_DEPARTMENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="LABOR_AMOUNT" ColumnName="LABOR_AMOUNT" />
+          <ScalarProperty Name="CLINICAL_DAY_AMOUNT" ColumnName="CLINICAL_DAY_AMOUNT" />
+          <ScalarProperty Name="CLINICAL_AMOUNT" ColumnName="CLINICAL_AMOUNT" />
+          <ScalarProperty Name="FROM_EXAM_CLINICAL_AMOUNT" ColumnName="FROM_EXAM_CLINICAL_AMOUNT" />
+          <ScalarProperty Name="END_TREATMENT_AMOUNT" ColumnName="END_TREATMENT_AMOUNT" />
+          <ScalarProperty Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" ColumnName="VIR_FROM_OTHER_CLINICAL_AMOUNT" />
+          <ScalarProperty Name="VIR_NOT_END_TREATMENT_AMOUNT" ColumnName="VIR_NOT_END_TREATMENT_AMOUNT" />
+          <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+          <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+          <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+          <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_HTC_REPARTITION_RATIO">
+      <EntityTypeMapping TypeName="DataModels.V_HTC_REPARTITION_RATIO">
+        <MappingFragment StoreEntitySet="V_HTC_REPARTITION_RATIO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+          <ScalarProperty Name="REPARTITION_TYPE_ID" ColumnName="REPARTITION_TYPE_ID" />
+          <ScalarProperty Name="RATIO" ColumnName="RATIO" />
+          <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="REPARTITION_TYPE_CODE" ColumnName="REPARTITION_TYPE_CODE" />
+          <ScalarProperty Name="REPARTITION_TYPE_NAME" ColumnName="REPARTITION_TYPE_NAME" />
+          <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+          <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

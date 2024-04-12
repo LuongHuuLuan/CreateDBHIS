@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LISDataModelsStoreContainer" CdmEntityContainer="LISEntities">
+    <EntitySetMapping Name="LIS_ANTIBIOTIC">
+      <EntityTypeMapping TypeName="DataModels.LIS_ANTIBIOTIC">
+        <MappingFragment StoreEntitySet="LIS_ANTIBIOTIC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_CODE" ColumnName="ANTIBIOTIC_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_NAME" ColumnName="ANTIBIOTIC_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_BAC_ANTIBIOTIC">
+      <EntityTypeMapping TypeName="DataModels.LIS_BAC_ANTIBIOTIC">
+        <MappingFragment StoreEntitySet="LIS_BAC_ANTIBIOTIC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_ID" ColumnName="ANTIBIOTIC_ID" />
+          <ScalarProperty Name="BACTERIUM_ID" ColumnName="BACTERIUM_ID" />
+          <ScalarProperty Name="MIC" ColumnName="MIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_BACTERIUM">
+      <EntityTypeMapping TypeName="DataModels.LIS_BACTERIUM">
+        <MappingFragment StoreEntitySet="LIS_BACTERIUM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BACTERIUM_CODE" ColumnName="BACTERIUM_CODE" />
+          <ScalarProperty Name="BACTERIUM_NAME" ColumnName="BACTERIUM_NAME" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_ID" ColumnName="BACTERIUM_FAMILY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_BACTERIUM_FAMILY">
+      <EntityTypeMapping TypeName="DataModels.LIS_BACTERIUM_FAMILY">
+        <MappingFragment StoreEntitySet="LIS_BACTERIUM_FAMILY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_CODE" ColumnName="BACTERIUM_FAMILY_CODE" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_NAME" ColumnName="BACTERIUM_FAMILY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_BARCODE">
+      <EntityTypeMapping TypeName="DataModels.LIS_BARCODE">
+        <MappingFragment StoreEntitySet="LIS_BARCODE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="BARCODE_CODE" ColumnName="BARCODE_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_CONFIG">
+      <EntityTypeMapping TypeName="DataModels.LIS_CONFIG">
+        <MappingFragment StoreEntitySet="LIS_CONFIG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="KEY" ColumnName="KEY" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="DEFAULT_VALUE" ColumnName="DEFAULT_VALUE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_MACHINE">
+      <EntityTypeMapping TypeName="DataModels.LIS_MACHINE">
+        <MappingFragment StoreEntitySet="LIS_MACHINE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MACHINE_CODE" ColumnName="MACHINE_CODE" />
+          <ScalarProperty Name="MACHINE_NAME" ColumnName="MACHINE_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_MACHINE_INDEX">
+      <EntityTypeMapping TypeName="DataModels.LIS_MACHINE_INDEX">
+        <MappingFragment StoreEntitySet="LIS_MACHINE_INDEX">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MACHINE_INDEX_CODE" ColumnName="MACHINE_INDEX_CODE" />
+          <ScalarProperty Name="MACHINE_INDEX_NAME" ColumnName="MACHINE_INDEX_NAME" />
+          <ScalarProperty Name="MACHINE_ID" ColumnName="MACHINE_ID" />
+          <ScalarProperty Name="FORMAT_VALUE" ColumnName="FORMAT_VALUE" />
+          <ScalarProperty Name="RESULT_COEFFICIENT" ColumnName="RESULT_COEFFICIENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_ORDINAL">
+      <EntityTypeMapping TypeName="DataModels.LIS_ORDINAL">
+        <MappingFragment StoreEntitySet="LIS_ORDINAL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="BASE" ColumnName="BASE" />
+          <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_RESULT">
+      <EntityTypeMapping TypeName="DataModels.LIS_RESULT">
+        <MappingFragment StoreEntitySet="LIS_RESULT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MACHINE_ID" ColumnName="MACHINE_ID" />
+          <ScalarProperty Name="TEST_INDEX_CODE" ColumnName="TEST_INDEX_CODE" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="SUMMARY_CODE" ColumnName="SUMMARY_CODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="TEST_INDEX_NAME" ColumnName="TEST_INDEX_NAME" />
+          <ScalarProperty Name="TEST_INDEX_UNIT_SYMBOL" ColumnName="TEST_INDEX_UNIT_SYMBOL" />
+          <ScalarProperty Name="MACHINE_INDEX_CODE" ColumnName="MACHINE_INDEX_CODE" />
+          <ScalarProperty Name="MACHINE_INDEX_NAME" ColumnName="MACHINE_INDEX_NAME" />
+          <ScalarProperty Name="SAMPLE_SERVICE_ID" ColumnName="SAMPLE_SERVICE_ID" />
+          <ScalarProperty Name="IS_RETURN_RESULT" ColumnName="IS_RETURN_RESULT" />
+          <ScalarProperty Name="OLD_VALUE" ColumnName="OLD_VALUE" />
+          <ScalarProperty Name="MIC" ColumnName="MIC" />
+          <ScalarProperty Name="SRI_CODE" ColumnName="SRI_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_CODE" ColumnName="ANTIBIOTIC_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_NAME" ColumnName="ANTIBIOTIC_NAME" />
+          <ScalarProperty Name="BACTERIUM_CODE" ColumnName="BACTERIUM_CODE" />
+          <ScalarProperty Name="BACTERIUM_NAME" ColumnName="BACTERIUM_NAME" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_CODE" ColumnName="BACTERIUM_FAMILY_CODE" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_NAME" ColumnName="BACTERIUM_FAMILY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_SAMPLE">
+      <EntityTypeMapping TypeName="DataModels.LIS_SAMPLE">
+        <MappingFragment StoreEntitySet="LIS_SAMPLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_CODE" ColumnName="SAMPLE_ROOM_CODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_NAME" ColumnName="SAMPLE_ROOM_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+          <ScalarProperty Name="EXECUTE_ROOM_NAME" ColumnName="EXECUTE_ROOM_NAME" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="SERVICE_REQ_CODE" ColumnName="SERVICE_REQ_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_ID" ColumnName="SAMPLE_STT_ID" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="RESULT_TIME" ColumnName="RESULT_TIME" />
+          <ScalarProperty Name="BARCODE_TIME" ColumnName="BARCODE_TIME" />
+          <ScalarProperty Name="VIR_DATE_BARCODE" ColumnName="VIR_DATE_BARCODE" />
+          <ScalarProperty Name="REQUEST_ROOM_CODE" ColumnName="REQUEST_ROOM_CODE" />
+          <ScalarProperty Name="REQUEST_ROOM_NAME" ColumnName="REQUEST_ROOM_NAME" />
+          <ScalarProperty Name="IS_NOT_USE_BARCODE" ColumnName="IS_NOT_USE_BARCODE" />
+          <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+          <ScalarProperty Name="SAMPLE_TIME" ColumnName="SAMPLE_TIME" />
+          <ScalarProperty Name="APPOINTMENT_TIME" ColumnName="APPOINTMENT_TIME" />
+          <ScalarProperty Name="INTRUCTION_TIME" ColumnName="INTRUCTION_TIME" />
+          <ScalarProperty Name="SAMPLE_LOGINNAME" ColumnName="SAMPLE_LOGINNAME" />
+          <ScalarProperty Name="SAMPLE_USERNAME" ColumnName="SAMPLE_USERNAME" />
+          <ScalarProperty Name="APPROVAL_TIME" ColumnName="APPROVAL_TIME" />
+          <ScalarProperty Name="APPROVAL_LOGINNAME" ColumnName="APPROVAL_LOGINNAME" />
+          <ScalarProperty Name="APPROVAL_USERNAME" ColumnName="APPROVAL_USERNAME" />
+          <ScalarProperty Name="TREATMENT_CODE" ColumnName="TREATMENT_CODE" />
+          <ScalarProperty Name="REQUEST_DEPARTMENT_CODE" ColumnName="REQUEST_DEPARTMENT_CODE" />
+          <ScalarProperty Name="REQUEST_DEPARTMENT_NAME" ColumnName="REQUEST_DEPARTMENT_NAME" />
+          <ScalarProperty Name="REJECT_REASON" ColumnName="REJECT_REASON" />
+          <ScalarProperty Name="SAMPLE_TYPE_ID" ColumnName="SAMPLE_TYPE_ID" />
+          <ScalarProperty Name="SAMPLE_CONDITION_ID" ColumnName="SAMPLE_CONDITION_ID" />
+          <ScalarProperty Name="REQUEST_LOGINNAME" ColumnName="REQUEST_LOGINNAME" />
+          <ScalarProperty Name="REQUEST_USERNAME" ColumnName="REQUEST_USERNAME" />
+          <ScalarProperty Name="SAMPLE_ORDER" ColumnName="SAMPLE_ORDER" />
+          <ScalarProperty Name="IS_SAMPLE_ORDER_REQUEST" ColumnName="IS_SAMPLE_ORDER_REQUEST" />
+          <ScalarProperty Name="CALL_SAMPLE_ORDER" ColumnName="CALL_SAMPLE_ORDER" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="IS_ANTIBIOTIC_RESISTANCE" ColumnName="IS_ANTIBIOTIC_RESISTANCE" />
+          <ScalarProperty Name="KSK_CONTRACT_CODE" ColumnName="KSK_CONTRACT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_SAMPLE_CONDITION">
+      <EntityTypeMapping TypeName="DataModels.LIS_SAMPLE_CONDITION">
+        <MappingFragment StoreEntitySet="LIS_SAMPLE_CONDITION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_CONDITION_CODE" ColumnName="SAMPLE_CONDITION_CODE" />
+          <ScalarProperty Name="SAMPLE_CONDITION_NAME" ColumnName="SAMPLE_CONDITION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_SAMPLE_SERVICE">
+      <EntityTypeMapping TypeName="DataModels.LIS_SAMPLE_SERVICE">
+        <MappingFragment StoreEntitySet="LIS_SAMPLE_SERVICE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_ID" ColumnName="SAMPLE_ID" />
+          <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+          <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_ID" ColumnName="SAMPLE_SERVICE_STT_ID" />
+          <ScalarProperty Name="IS_NO_EXECUTE" ColumnName="IS_NO_EXECUTE" />
+          <ScalarProperty Name="SERVICE_NUM_ORDER" ColumnName="SERVICE_NUM_ORDER" />
+          <ScalarProperty Name="MAX_TIME_RETURN_RESULT" ColumnName="MAX_TIME_RETURN_RESULT" />
+          <ScalarProperty Name="IS_RUN_AGAIN" ColumnName="IS_RUN_AGAIN" />
+          <ScalarProperty Name="IS_RUNNING" ColumnName="IS_RUNNING" />
+          <ScalarProperty Name="MACHINE_ID" ColumnName="MACHINE_ID" />
+          <ScalarProperty Name="BACTERIAL_CULTIVATION_RESULT" ColumnName="BACTERIAL_CULTIVATION_RESULT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_SAMPLE_SERVICE_STT">
+      <EntityTypeMapping TypeName="DataModels.LIS_SAMPLE_SERVICE_STT">
+        <MappingFragment StoreEntitySet="LIS_SAMPLE_SERVICE_STT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_CODE" ColumnName="SAMPLE_SERVICE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_NAME" ColumnName="SAMPLE_SERVICE_STT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_SAMPLE_STT">
+      <EntityTypeMapping TypeName="DataModels.LIS_SAMPLE_STT">
+        <MappingFragment StoreEntitySet="LIS_SAMPLE_STT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_CODE" ColumnName="SAMPLE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_NAME" ColumnName="SAMPLE_STT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_SAMPLE_TYPE">
+      <EntityTypeMapping TypeName="DataModels.LIS_SAMPLE_TYPE">
+        <MappingFragment StoreEntitySet="LIS_SAMPLE_TYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_TYPE_CODE" ColumnName="SAMPLE_TYPE_CODE" />
+          <ScalarProperty Name="SAMPLE_TYPE_NAME" ColumnName="SAMPLE_TYPE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIS_TEST_INDEX_MAP">
+      <EntityTypeMapping TypeName="DataModels.LIS_TEST_INDEX_MAP">
+        <MappingFragment StoreEntitySet="LIS_TEST_INDEX_MAP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="TEST_INDEX_CODE" ColumnName="TEST_INDEX_CODE" />
+          <ScalarProperty Name="TEST_INDEX_NAME" ColumnName="TEST_INDEX_NAME" />
+          <ScalarProperty Name="TEST_INDEX_UNIT_SYMBOL" ColumnName="TEST_INDEX_UNIT_SYMBOL" />
+          <ScalarProperty Name="MACHINE_INDEX_ID" ColumnName="MACHINE_INDEX_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_LIS_BAC_ANTIBIOTIC">
+      <EntityTypeMapping TypeName="DataModels.V_LIS_BAC_ANTIBIOTIC">
+        <MappingFragment StoreEntitySet="V_LIS_BAC_ANTIBIOTIC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_ID" ColumnName="ANTIBIOTIC_ID" />
+          <ScalarProperty Name="BACTERIUM_ID" ColumnName="BACTERIUM_ID" />
+          <ScalarProperty Name="MIC" ColumnName="MIC" />
+          <ScalarProperty Name="ANTIBIOTIC_CODE" ColumnName="ANTIBIOTIC_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_NAME" ColumnName="ANTIBIOTIC_NAME" />
+          <ScalarProperty Name="BACTERIUM_CODE" ColumnName="BACTERIUM_CODE" />
+          <ScalarProperty Name="BACTERIUM_NAME" ColumnName="BACTERIUM_NAME" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_CODE" ColumnName="BACTERIUM_FAMILY_CODE" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_NAME" ColumnName="BACTERIUM_FAMILY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_LIS_RESULT">
+      <EntityTypeMapping TypeName="DataModels.V_LIS_RESULT">
+        <MappingFragment StoreEntitySet="V_LIS_RESULT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="MACHINE_ID" ColumnName="MACHINE_ID" />
+          <ScalarProperty Name="TEST_INDEX_CODE" ColumnName="TEST_INDEX_CODE" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="SUMMARY_CODE" ColumnName="SUMMARY_CODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="TEST_INDEX_NAME" ColumnName="TEST_INDEX_NAME" />
+          <ScalarProperty Name="TEST_INDEX_UNIT_SYMBOL" ColumnName="TEST_INDEX_UNIT_SYMBOL" />
+          <ScalarProperty Name="MACHINE_INDEX_CODE" ColumnName="MACHINE_INDEX_CODE" />
+          <ScalarProperty Name="MACHINE_INDEX_NAME" ColumnName="MACHINE_INDEX_NAME" />
+          <ScalarProperty Name="SAMPLE_SERVICE_ID" ColumnName="SAMPLE_SERVICE_ID" />
+          <ScalarProperty Name="IS_RETURN_RESULT" ColumnName="IS_RETURN_RESULT" />
+          <ScalarProperty Name="OLD_VALUE" ColumnName="OLD_VALUE" />
+          <ScalarProperty Name="MIC" ColumnName="MIC" />
+          <ScalarProperty Name="SRI_CODE" ColumnName="SRI_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_CODE" ColumnName="ANTIBIOTIC_CODE" />
+          <ScalarProperty Name="ANTIBIOTIC_NAME" ColumnName="ANTIBIOTIC_NAME" />
+          <ScalarProperty Name="BACTERIUM_CODE" ColumnName="BACTERIUM_CODE" />
+          <ScalarProperty Name="BACTERIUM_NAME" ColumnName="BACTERIUM_NAME" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_CODE" ColumnName="BACTERIUM_FAMILY_CODE" />
+          <ScalarProperty Name="BACTERIUM_FAMILY_NAME" ColumnName="BACTERIUM_FAMILY_NAME" />
+          <ScalarProperty Name="MACHINE_CODE" ColumnName="MACHINE_CODE" />
+          <ScalarProperty Name="MACHINE_NAME" ColumnName="MACHINE_NAME" />
+          <ScalarProperty Name="SAMPLE_STT_ID" ColumnName="SAMPLE_STT_ID" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="BARCODE_TIME" ColumnName="BARCODE_TIME" />
+          <ScalarProperty Name="VIR_DATE_BARCODE" ColumnName="VIR_DATE_BARCODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_CODE" ColumnName="SAMPLE_ROOM_CODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_NAME" ColumnName="SAMPLE_ROOM_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+          <ScalarProperty Name="EXECUTE_ROOM_NAME" ColumnName="EXECUTE_ROOM_NAME" />
+          <ScalarProperty Name="RESULT_TIME" ColumnName="RESULT_TIME" />
+          <ScalarProperty Name="SAMPLE_STT_CODE" ColumnName="SAMPLE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_NAME" ColumnName="SAMPLE_STT_NAME" />
+          <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+          <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+          <ScalarProperty Name="SAMPLE_ID" ColumnName="SAMPLE_ID" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_ID" ColumnName="SAMPLE_SERVICE_STT_ID" />
+          <ScalarProperty Name="IS_NO_EXECUTE" ColumnName="IS_NO_EXECUTE" />
+          <ScalarProperty Name="SERVICE_NUM_ORDER" ColumnName="SERVICE_NUM_ORDER" />
+          <ScalarProperty Name="IS_RUN_AGAIN" ColumnName="IS_RUN_AGAIN" />
+          <ScalarProperty Name="IS_RUNNING" ColumnName="IS_RUNNING" />
+          <ScalarProperty Name="SERVICE_MACHINE_ID" ColumnName="SERVICE_MACHINE_ID" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_CODE" ColumnName="SAMPLE_SERVICE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_NAME" ColumnName="SAMPLE_SERVICE_STT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_LIS_SAMPLE">
+      <EntityTypeMapping TypeName="DataModels.V_LIS_SAMPLE">
+        <MappingFragment StoreEntitySet="V_LIS_SAMPLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_CODE" ColumnName="SAMPLE_ROOM_CODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_NAME" ColumnName="SAMPLE_ROOM_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+          <ScalarProperty Name="EXECUTE_ROOM_NAME" ColumnName="EXECUTE_ROOM_NAME" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="SERVICE_REQ_CODE" ColumnName="SERVICE_REQ_CODE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_ID" ColumnName="SAMPLE_STT_ID" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="RESULT_TIME" ColumnName="RESULT_TIME" />
+          <ScalarProperty Name="BARCODE_TIME" ColumnName="BARCODE_TIME" />
+          <ScalarProperty Name="VIR_DATE_BARCODE" ColumnName="VIR_DATE_BARCODE" />
+          <ScalarProperty Name="REQUEST_ROOM_CODE" ColumnName="REQUEST_ROOM_CODE" />
+          <ScalarProperty Name="REQUEST_ROOM_NAME" ColumnName="REQUEST_ROOM_NAME" />
+          <ScalarProperty Name="IS_NOT_USE_BARCODE" ColumnName="IS_NOT_USE_BARCODE" />
+          <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+          <ScalarProperty Name="SAMPLE_TIME" ColumnName="SAMPLE_TIME" />
+          <ScalarProperty Name="APPOINTMENT_TIME" ColumnName="APPOINTMENT_TIME" />
+          <ScalarProperty Name="INTRUCTION_TIME" ColumnName="INTRUCTION_TIME" />
+          <ScalarProperty Name="SAMPLE_LOGINNAME" ColumnName="SAMPLE_LOGINNAME" />
+          <ScalarProperty Name="SAMPLE_USERNAME" ColumnName="SAMPLE_USERNAME" />
+          <ScalarProperty Name="APPROVAL_TIME" ColumnName="APPROVAL_TIME" />
+          <ScalarProperty Name="APPROVAL_LOGINNAME" ColumnName="APPROVAL_LOGINNAME" />
+          <ScalarProperty Name="APPROVAL_USERNAME" ColumnName="APPROVAL_USERNAME" />
+          <ScalarProperty Name="TREATMENT_CODE" ColumnName="TREATMENT_CODE" />
+          <ScalarProperty Name="REQUEST_DEPARTMENT_CODE" ColumnName="REQUEST_DEPARTMENT_CODE" />
+          <ScalarProperty Name="REQUEST_DEPARTMENT_NAME" ColumnName="REQUEST_DEPARTMENT_NAME" />
+          <ScalarProperty Name="REJECT_REASON" ColumnName="REJECT_REASON" />
+          <ScalarProperty Name="SAMPLE_TYPE_ID" ColumnName="SAMPLE_TYPE_ID" />
+          <ScalarProperty Name="SAMPLE_CONDITION_ID" ColumnName="SAMPLE_CONDITION_ID" />
+          <ScalarProperty Name="REQUEST_LOGINNAME" ColumnName="REQUEST_LOGINNAME" />
+          <ScalarProperty Name="REQUEST_USERNAME" ColumnName="REQUEST_USERNAME" />
+          <ScalarProperty Name="SAMPLE_ORDER" ColumnName="SAMPLE_ORDER" />
+          <ScalarProperty Name="IS_SAMPLE_ORDER_REQUEST" ColumnName="IS_SAMPLE_ORDER_REQUEST" />
+          <ScalarProperty Name="CALL_SAMPLE_ORDER" ColumnName="CALL_SAMPLE_ORDER" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="IS_ANTIBIOTIC_RESISTANCE" ColumnName="IS_ANTIBIOTIC_RESISTANCE" />
+          <ScalarProperty Name="KSK_CONTRACT_CODE" ColumnName="KSK_CONTRACT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_CODE" ColumnName="SAMPLE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_NAME" ColumnName="SAMPLE_STT_NAME" />
+          <ScalarProperty Name="SAMPLE_TYPE_CODE" ColumnName="SAMPLE_TYPE_CODE" />
+          <ScalarProperty Name="SAMPLE_TYPE_NAME" ColumnName="SAMPLE_TYPE_NAME" />
+          <ScalarProperty Name="SAMPLE_CONDITION_CODE" ColumnName="SAMPLE_CONDITION_CODE" />
+          <ScalarProperty Name="SAMPLE_CONDITION_NAME" ColumnName="SAMPLE_CONDITION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_LIS_SAMPLE_SERVICE">
+      <EntityTypeMapping TypeName="DataModels.V_LIS_SAMPLE_SERVICE">
+        <MappingFragment StoreEntitySet="V_LIS_SAMPLE_SERVICE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="SAMPLE_ID" ColumnName="SAMPLE_ID" />
+          <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+          <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_ID" ColumnName="SAMPLE_SERVICE_STT_ID" />
+          <ScalarProperty Name="IS_NO_EXECUTE" ColumnName="IS_NO_EXECUTE" />
+          <ScalarProperty Name="SERVICE_NUM_ORDER" ColumnName="SERVICE_NUM_ORDER" />
+          <ScalarProperty Name="MAX_TIME_RETURN_RESULT" ColumnName="MAX_TIME_RETURN_RESULT" />
+          <ScalarProperty Name="IS_RUN_AGAIN" ColumnName="IS_RUN_AGAIN" />
+          <ScalarProperty Name="IS_RUNNING" ColumnName="IS_RUNNING" />
+          <ScalarProperty Name="MACHINE_ID" ColumnName="MACHINE_ID" />
+          <ScalarProperty Name="BACTERIAL_CULTIVATION_RESULT" ColumnName="BACTERIAL_CULTIVATION_RESULT" />
+          <ScalarProperty Name="SAMPLE_STT_ID" ColumnName="SAMPLE_STT_ID" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_CODE" ColumnName="SAMPLE_ROOM_CODE" />
+          <ScalarProperty Name="SAMPLE_ROOM_NAME" ColumnName="SAMPLE_ROOM_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+          <ScalarProperty Name="EXECUTE_ROOM_NAME" ColumnName="EXECUTE_ROOM_NAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+          <ScalarProperty Name="GENDER_CODE" ColumnName="GENDER_CODE" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="REQUEST_ROOM_CODE" ColumnName="REQUEST_ROOM_CODE" />
+          <ScalarProperty Name="REQUEST_ROOM_NAME" ColumnName="REQUEST_ROOM_NAME" />
+          <ScalarProperty Name="SERVICE_REQ_CODE" ColumnName="SERVICE_REQ_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_CODE" ColumnName="SAMPLE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_STT_NAME" ColumnName="SAMPLE_STT_NAME" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_CODE" ColumnName="SAMPLE_SERVICE_STT_CODE" />
+          <ScalarProperty Name="SAMPLE_SERVICE_STT_NAME" ColumnName="SAMPLE_SERVICE_STT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_LIS_TEST_INDEX_MAP">
+      <EntityTypeMapping TypeName="DataModels.V_LIS_TEST_INDEX_MAP">
+        <MappingFragment StoreEntitySet="V_LIS_TEST_INDEX_MAP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+          <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+          <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+          <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+          <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+          <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+          <ScalarProperty Name="TEST_INDEX_CODE" ColumnName="TEST_INDEX_CODE" />
+          <ScalarProperty Name="TEST_INDEX_NAME" ColumnName="TEST_INDEX_NAME" />
+          <ScalarProperty Name="TEST_INDEX_UNIT_SYMBOL" ColumnName="TEST_INDEX_UNIT_SYMBOL" />
+          <ScalarProperty Name="MACHINE_INDEX_ID" ColumnName="MACHINE_INDEX_ID" />
+          <ScalarProperty Name="MACHINE_INDEX_CODE" ColumnName="MACHINE_INDEX_CODE" />
+          <ScalarProperty Name="MACHINE_INDEX_NAME" ColumnName="MACHINE_INDEX_NAME" />
+          <ScalarProperty Name="MACHINE_ID" ColumnName="MACHINE_ID" />
+          <ScalarProperty Name="FORMAT_VALUE" ColumnName="FORMAT_VALUE" />
+          <ScalarProperty Name="RESULT_COEFFICIENT" ColumnName="RESULT_COEFFICIENT" />
+          <ScalarProperty Name="MACHINE_CODE" ColumnName="MACHINE_CODE" />
+          <ScalarProperty Name="MACHINE_NAME" ColumnName="MACHINE_NAME" />
+          <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

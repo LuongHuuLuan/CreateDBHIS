@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LISEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="LIS_ANTIBIOTIC" EntityType="DataModels.LIS_ANTIBIOTIC" />
+    <EntitySet Name="LIS_BAC_ANTIBIOTIC" EntityType="DataModels.LIS_BAC_ANTIBIOTIC" />
+    <EntitySet Name="LIS_BACTERIUM" EntityType="DataModels.LIS_BACTERIUM" />
+    <EntitySet Name="LIS_BACTERIUM_FAMILY" EntityType="DataModels.LIS_BACTERIUM_FAMILY" />
+    <EntitySet Name="LIS_BARCODE" EntityType="DataModels.LIS_BARCODE" />
+    <EntitySet Name="LIS_CONFIG" EntityType="DataModels.LIS_CONFIG" />
+    <EntitySet Name="LIS_MACHINE" EntityType="DataModels.LIS_MACHINE" />
+    <EntitySet Name="LIS_MACHINE_INDEX" EntityType="DataModels.LIS_MACHINE_INDEX" />
+    <EntitySet Name="LIS_ORDINAL" EntityType="DataModels.LIS_ORDINAL" />
+    <EntitySet Name="LIS_RESULT" EntityType="DataModels.LIS_RESULT" />
+    <EntitySet Name="LIS_SAMPLE" EntityType="DataModels.LIS_SAMPLE" />
+    <EntitySet Name="LIS_SAMPLE_CONDITION" EntityType="DataModels.LIS_SAMPLE_CONDITION" />
+    <EntitySet Name="LIS_SAMPLE_SERVICE" EntityType="DataModels.LIS_SAMPLE_SERVICE" />
+    <EntitySet Name="LIS_SAMPLE_SERVICE_STT" EntityType="DataModels.LIS_SAMPLE_SERVICE_STT" />
+    <EntitySet Name="LIS_SAMPLE_STT" EntityType="DataModels.LIS_SAMPLE_STT" />
+    <EntitySet Name="LIS_SAMPLE_TYPE" EntityType="DataModels.LIS_SAMPLE_TYPE" />
+    <EntitySet Name="LIS_TEST_INDEX_MAP" EntityType="DataModels.LIS_TEST_INDEX_MAP" />
+    <EntitySet Name="V_LIS_BAC_ANTIBIOTIC" EntityType="DataModels.V_LIS_BAC_ANTIBIOTIC" />
+    <EntitySet Name="V_LIS_RESULT" EntityType="DataModels.V_LIS_RESULT" />
+    <EntitySet Name="V_LIS_SAMPLE" EntityType="DataModels.V_LIS_SAMPLE" />
+    <EntitySet Name="V_LIS_SAMPLE_SERVICE" EntityType="DataModels.V_LIS_SAMPLE_SERVICE" />
+    <EntitySet Name="V_LIS_TEST_INDEX_MAP" EntityType="DataModels.V_LIS_TEST_INDEX_MAP" />
+    <AssociationSet Name="LIS_BAC_ANTIBIOTIC_FK1" Association="DataModels.LIS_BAC_ANTIBIOTIC_FK1">
+      <End Role="LIS_ANTIBIOTIC" EntitySet="LIS_ANTIBIOTIC" />
+      <End Role="LIS_BAC_ANTIBIOTIC" EntitySet="LIS_BAC_ANTIBIOTIC" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_BAC_ANTIBIOTIC_FK2" Association="DataModels.LIS_BAC_ANTIBIOTIC_FK2">
+      <End Role="LIS_BACTERIUM" EntitySet="LIS_BACTERIUM" />
+      <End Role="LIS_BAC_ANTIBIOTIC" EntitySet="LIS_BAC_ANTIBIOTIC" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_BACTERIUM_FK1" Association="DataModels.LIS_BACTERIUM_FK1">
+      <End Role="LIS_BACTERIUM_FAMILY" EntitySet="LIS_BACTERIUM_FAMILY" />
+      <End Role="LIS_BACTERIUM" EntitySet="LIS_BACTERIUM" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_MACHINE_INDEX_FK1" Association="DataModels.LIS_MACHINE_INDEX_FK1">
+      <End Role="LIS_MACHINE" EntitySet="LIS_MACHINE" />
+      <End Role="LIS_MACHINE_INDEX" EntitySet="LIS_MACHINE_INDEX" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_RESULT_FK2" Association="DataModels.LIS_RESULT_FK2">
+      <End Role="LIS_MACHINE" EntitySet="LIS_MACHINE" />
+      <End Role="LIS_RESULT" EntitySet="LIS_RESULT" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_SAMPLE_SERVICE_FK3" Association="DataModels.LIS_SAMPLE_SERVICE_FK3">
+      <End Role="LIS_MACHINE" EntitySet="LIS_MACHINE" />
+      <End Role="LIS_SAMPLE_SERVICE" EntitySet="LIS_SAMPLE_SERVICE" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_TEST_INDEX_MAP_FK1" Association="DataModels.LIS_TEST_INDEX_MAP_FK1">
+      <End Role="LIS_MACHINE_INDEX" EntitySet="LIS_MACHINE_INDEX" />
+      <End Role="LIS_TEST_INDEX_MAP" EntitySet="LIS_TEST_INDEX_MAP" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_RESULT_FK3" Association="DataModels.LIS_RESULT_FK3">
+      <End Role="LIS_SAMPLE_SERVICE" EntitySet="LIS_SAMPLE_SERVICE" />
+      <End Role="LIS_RESULT" EntitySet="LIS_RESULT" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_SAMPLE_FK1" Association="DataModels.LIS_SAMPLE_FK1">
+      <End Role="LIS_SAMPLE_STT" EntitySet="LIS_SAMPLE_STT" />
+      <End Role="LIS_SAMPLE" EntitySet="LIS_SAMPLE" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_SAMPLE_FK2" Association="DataModels.LIS_SAMPLE_FK2">
+      <End Role="LIS_SAMPLE_TYPE" EntitySet="LIS_SAMPLE_TYPE" />
+      <End Role="LIS_SAMPLE" EntitySet="LIS_SAMPLE" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_SAMPLE_FK3" Association="DataModels.LIS_SAMPLE_FK3">
+      <End Role="LIS_SAMPLE_CONDITION" EntitySet="LIS_SAMPLE_CONDITION" />
+      <End Role="LIS_SAMPLE" EntitySet="LIS_SAMPLE" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_SAMPLE_SERVICE_FK1" Association="DataModels.LIS_SAMPLE_SERVICE_FK1">
+      <End Role="LIS_SAMPLE" EntitySet="LIS_SAMPLE" />
+      <End Role="LIS_SAMPLE_SERVICE" EntitySet="LIS_SAMPLE_SERVICE" />
+    </AssociationSet>
+    <AssociationSet Name="LIS_SAMPLE_SERVICE_FK2" Association="DataModels.LIS_SAMPLE_SERVICE_FK2">
+      <End Role="LIS_SAMPLE_SERVICE_STT" EntitySet="LIS_SAMPLE_SERVICE_STT" />
+      <End Role="LIS_SAMPLE_SERVICE" EntitySet="LIS_SAMPLE_SERVICE" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="LIS_ANTIBIOTIC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_BAC_ANTIBIOTIC" Relationship="DataModels.LIS_BAC_ANTIBIOTIC_FK1" FromRole="LIS_ANTIBIOTIC" ToRole="LIS_BAC_ANTIBIOTIC" />
+  </EntityType>
+  <EntityType Name="LIS_BAC_ANTIBIOTIC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_ID" Type="Int64" Nullable="false" />
+    <Property Name="BACTERIUM_ID" Type="Int64" Nullable="false" />
+    <Property Name="MIC" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="LIS_ANTIBIOTIC" Relationship="DataModels.LIS_BAC_ANTIBIOTIC_FK1" FromRole="LIS_BAC_ANTIBIOTIC" ToRole="LIS_ANTIBIOTIC" />
+    <NavigationProperty Name="LIS_BACTERIUM" Relationship="DataModels.LIS_BAC_ANTIBIOTIC_FK2" FromRole="LIS_BAC_ANTIBIOTIC" ToRole="LIS_BACTERIUM" />
+  </EntityType>
+  <EntityType Name="LIS_BACTERIUM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="LIS_BAC_ANTIBIOTIC" Relationship="DataModels.LIS_BAC_ANTIBIOTIC_FK2" FromRole="LIS_BACTERIUM" ToRole="LIS_BAC_ANTIBIOTIC" />
+    <NavigationProperty Name="LIS_BACTERIUM_FAMILY" Relationship="DataModels.LIS_BACTERIUM_FK1" FromRole="LIS_BACTERIUM" ToRole="LIS_BACTERIUM_FAMILY" />
+  </EntityType>
+  <EntityType Name="LIS_BACTERIUM_FAMILY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_BACTERIUM" Relationship="DataModels.LIS_BACTERIUM_FK1" FromRole="LIS_BACTERIUM_FAMILY" ToRole="LIS_BACTERIUM" />
+  </EntityType>
+  <EntityType Name="LIS_BARCODE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BARCODE_CODE" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="LIS_CONFIG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="KEY" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="VALUE" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="DEFAULT_VALUE" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="LIS_MACHINE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_MACHINE_INDEX" Relationship="DataModels.LIS_MACHINE_INDEX_FK1" FromRole="LIS_MACHINE" ToRole="LIS_MACHINE_INDEX" />
+    <NavigationProperty Name="LIS_RESULT" Relationship="DataModels.LIS_RESULT_FK2" FromRole="LIS_MACHINE" ToRole="LIS_RESULT" />
+    <NavigationProperty Name="LIS_SAMPLE_SERVICE" Relationship="DataModels.LIS_SAMPLE_SERVICE_FK3" FromRole="LIS_MACHINE" ToRole="LIS_SAMPLE_SERVICE" />
+  </EntityType>
+  <EntityType Name="LIS_MACHINE_INDEX">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_CODE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_ID" Type="Int64" Nullable="false" />
+    <Property Name="FORMAT_VALUE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="RESULT_COEFFICIENT" Type="Decimal" Precision="19" Scale="2" />
+    <NavigationProperty Name="LIS_MACHINE" Relationship="DataModels.LIS_MACHINE_INDEX_FK1" FromRole="LIS_MACHINE_INDEX" ToRole="LIS_MACHINE" />
+    <NavigationProperty Name="LIS_TEST_INDEX_MAP" Relationship="DataModels.LIS_TEST_INDEX_MAP_FK1" FromRole="LIS_MACHINE_INDEX" ToRole="LIS_TEST_INDEX_MAP" />
+  </EntityType>
+  <EntityType Name="LIS_ORDINAL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TYPE" Type="Int64" Nullable="false" />
+    <Property Name="BASE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COUNT" Type="Int64" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="LIS_RESULT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_ID" Type="Int64" />
+    <Property Name="TEST_INDEX_CODE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="VALUE" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="SUMMARY_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_UNIT_SYMBOL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_ID" Type="Int64" />
+    <Property Name="IS_RETURN_RESULT" Type="Int16" />
+    <Property Name="OLD_VALUE" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="MIC" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SRI_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_MACHINE" Relationship="DataModels.LIS_RESULT_FK2" FromRole="LIS_RESULT" ToRole="LIS_MACHINE" />
+    <NavigationProperty Name="LIS_SAMPLE_SERVICE" Relationship="DataModels.LIS_RESULT_FK3" FromRole="LIS_RESULT" ToRole="LIS_SAMPLE_SERVICE" />
+  </EntityType>
+  <EntityType Name="LIS_SAMPLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="BARCODE" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_REQ_CODE" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="PATIENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_ID" Type="Int64" Nullable="false" />
+    <Property Name="GENDER_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="Int64" />
+    <Property Name="RESULT_TIME" Type="Int64" />
+    <Property Name="BARCODE_TIME" Type="Int64" />
+    <Property Name="VIR_DATE_BARCODE" Type="String" MaxLength="47" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="REQUEST_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IS_NOT_USE_BARCODE" Type="Int16" />
+    <Property Name="NUM_ORDER" Type="Int64" />
+    <Property Name="SAMPLE_TIME" Type="Int64" />
+    <Property Name="APPOINTMENT_TIME" Type="Int64" />
+    <Property Name="INTRUCTION_TIME" Type="Int64" />
+    <Property Name="SAMPLE_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APPROVAL_TIME" Type="Int64" />
+    <Property Name="APPROVAL_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APPROVAL_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TREATMENT_CODE" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_DEPARTMENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REJECT_REASON" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_TYPE_ID" Type="Int64" />
+    <Property Name="SAMPLE_CONDITION_ID" Type="Int64" />
+    <Property Name="REQUEST_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ORDER" Type="Int64" />
+    <Property Name="IS_SAMPLE_ORDER_REQUEST" Type="Int16" />
+    <Property Name="CALL_SAMPLE_ORDER" Type="Int64" />
+    <Property Name="ADDRESS" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ANTIBIOTIC_RESISTANCE" Type="Int16" />
+    <Property Name="KSK_CONTRACT_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_SAMPLE_STT" Relationship="DataModels.LIS_SAMPLE_FK1" FromRole="LIS_SAMPLE" ToRole="LIS_SAMPLE_STT" />
+    <NavigationProperty Name="LIS_SAMPLE_TYPE" Relationship="DataModels.LIS_SAMPLE_FK2" FromRole="LIS_SAMPLE" ToRole="LIS_SAMPLE_TYPE" />
+    <NavigationProperty Name="LIS_SAMPLE_CONDITION" Relationship="DataModels.LIS_SAMPLE_FK3" FromRole="LIS_SAMPLE" ToRole="LIS_SAMPLE_CONDITION" />
+    <NavigationProperty Name="LIS_SAMPLE_SERVICE" Relationship="DataModels.LIS_SAMPLE_SERVICE_FK1" FromRole="LIS_SAMPLE" ToRole="LIS_SAMPLE_SERVICE" />
+  </EntityType>
+  <EntityType Name="LIS_SAMPLE_CONDITION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_CONDITION_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_CONDITION_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_SAMPLE" Relationship="DataModels.LIS_SAMPLE_FK3" FromRole="LIS_SAMPLE_CONDITION" ToRole="LIS_SAMPLE" />
+  </EntityType>
+  <EntityType Name="LIS_SAMPLE_SERVICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ID" Type="Int64" Nullable="false" />
+    <Property Name="SERVICE_CODE" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_ID" Type="Int64" Nullable="false" />
+    <Property Name="IS_NO_EXECUTE" Type="Int16" />
+    <Property Name="SERVICE_NUM_ORDER" Type="Int64" />
+    <Property Name="MAX_TIME_RETURN_RESULT" Type="Int16" />
+    <Property Name="IS_RUN_AGAIN" Type="Int16" />
+    <Property Name="IS_RUNNING" Type="Int16" />
+    <Property Name="MACHINE_ID" Type="Int64" />
+    <Property Name="BACTERIAL_CULTIVATION_RESULT" Type="Int16" />
+    <NavigationProperty Name="LIS_MACHINE" Relationship="DataModels.LIS_SAMPLE_SERVICE_FK3" FromRole="LIS_SAMPLE_SERVICE" ToRole="LIS_MACHINE" />
+    <NavigationProperty Name="LIS_RESULT" Relationship="DataModels.LIS_RESULT_FK3" FromRole="LIS_SAMPLE_SERVICE" ToRole="LIS_RESULT" />
+    <NavigationProperty Name="LIS_SAMPLE" Relationship="DataModels.LIS_SAMPLE_SERVICE_FK1" FromRole="LIS_SAMPLE_SERVICE" ToRole="LIS_SAMPLE" />
+    <NavigationProperty Name="LIS_SAMPLE_SERVICE_STT" Relationship="DataModels.LIS_SAMPLE_SERVICE_FK2" FromRole="LIS_SAMPLE_SERVICE" ToRole="LIS_SAMPLE_SERVICE_STT" />
+  </EntityType>
+  <EntityType Name="LIS_SAMPLE_SERVICE_STT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_SAMPLE_SERVICE" Relationship="DataModels.LIS_SAMPLE_SERVICE_FK2" FromRole="LIS_SAMPLE_SERVICE_STT" ToRole="LIS_SAMPLE_SERVICE" />
+  </EntityType>
+  <EntityType Name="LIS_SAMPLE_STT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_SAMPLE" Relationship="DataModels.LIS_SAMPLE_FK1" FromRole="LIS_SAMPLE_STT" ToRole="LIS_SAMPLE" />
+  </EntityType>
+  <EntityType Name="LIS_SAMPLE_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_TYPE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="LIS_SAMPLE" Relationship="DataModels.LIS_SAMPLE_FK2" FromRole="LIS_SAMPLE_TYPE" ToRole="LIS_SAMPLE" />
+  </EntityType>
+  <EntityType Name="LIS_TEST_INDEX_MAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_UNIT_SYMBOL" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_ID" Type="Int64" />
+    <NavigationProperty Name="LIS_MACHINE_INDEX" Relationship="DataModels.LIS_TEST_INDEX_MAP_FK1" FromRole="LIS_TEST_INDEX_MAP" ToRole="LIS_MACHINE_INDEX" />
+  </EntityType>
+  <EntityType Name="V_LIS_BAC_ANTIBIOTIC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_ID" Type="Int64" Nullable="false" />
+    <Property Name="BACTERIUM_ID" Type="Int64" Nullable="false" />
+    <Property Name="MIC" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ANTIBIOTIC_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_LIS_RESULT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_ID" Type="Int64" />
+    <Property Name="TEST_INDEX_CODE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="VALUE" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="SUMMARY_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_UNIT_SYMBOL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_ID" Type="Int64" />
+    <Property Name="IS_RETURN_RESULT" Type="Int16" />
+    <Property Name="OLD_VALUE" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="MIC" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SRI_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ANTIBIOTIC_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BACTERIUM_FAMILY_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_ID" Type="Int64" />
+    <Property Name="BARCODE" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="BARCODE_TIME" Type="Int64" />
+    <Property Name="VIR_DATE_BARCODE" Type="String" MaxLength="47" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SAMPLE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="RESULT_TIME" Type="Int64" />
+    <Property Name="SAMPLE_STT_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_CODE" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ID" Type="Int64" />
+    <Property Name="SAMPLE_SERVICE_STT_ID" Type="Int64" />
+    <Property Name="IS_NO_EXECUTE" Type="Int16" />
+    <Property Name="SERVICE_NUM_ORDER" Type="Int64" />
+    <Property Name="IS_RUN_AGAIN" Type="Int16" />
+    <Property Name="IS_RUNNING" Type="Int16" />
+    <Property Name="SERVICE_MACHINE_ID" Type="Int64" />
+    <Property Name="SAMPLE_SERVICE_STT_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_LIS_SAMPLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="BARCODE" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_REQ_CODE" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="PATIENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_ID" Type="Int64" Nullable="false" />
+    <Property Name="GENDER_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="Int64" />
+    <Property Name="RESULT_TIME" Type="Int64" />
+    <Property Name="BARCODE_TIME" Type="Int64" />
+    <Property Name="VIR_DATE_BARCODE" Type="String" MaxLength="47" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="REQUEST_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IS_NOT_USE_BARCODE" Type="Int16" />
+    <Property Name="NUM_ORDER" Type="Int64" />
+    <Property Name="SAMPLE_TIME" Type="Int64" />
+    <Property Name="APPOINTMENT_TIME" Type="Int64" />
+    <Property Name="INTRUCTION_TIME" Type="Int64" />
+    <Property Name="SAMPLE_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="APPROVAL_TIME" Type="Int64" />
+    <Property Name="APPROVAL_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APPROVAL_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TREATMENT_CODE" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_DEPARTMENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REJECT_REASON" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_TYPE_ID" Type="Int64" />
+    <Property Name="SAMPLE_CONDITION_ID" Type="Int64" />
+    <Property Name="REQUEST_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ORDER" Type="Int64" />
+    <Property Name="IS_SAMPLE_ORDER_REQUEST" Type="Int16" />
+    <Property Name="CALL_SAMPLE_ORDER" Type="Int64" />
+    <Property Name="ADDRESS" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ANTIBIOTIC_RESISTANCE" Type="Int16" />
+    <Property Name="KSK_CONTRACT_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_TYPE_CODE" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_CONDITION_CODE" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_CONDITION_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_LIS_SAMPLE_SERVICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ID" Type="Int64" Nullable="false" />
+    <Property Name="SERVICE_CODE" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_ID" Type="Int64" Nullable="false" />
+    <Property Name="IS_NO_EXECUTE" Type="Int16" />
+    <Property Name="SERVICE_NUM_ORDER" Type="Int64" />
+    <Property Name="MAX_TIME_RETURN_RESULT" Type="Int16" />
+    <Property Name="IS_RUN_AGAIN" Type="Int16" />
+    <Property Name="IS_RUNNING" Type="Int16" />
+    <Property Name="MACHINE_ID" Type="Int64" />
+    <Property Name="BACTERIAL_CULTIVATION_RESULT" Type="Int16" />
+    <Property Name="SAMPLE_STT_ID" Type="Int64" Nullable="false" />
+    <Property Name="BARCODE" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="PATIENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="GENDER_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="Int64" />
+    <Property Name="REQUEST_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="REQUEST_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICE_REQ_CODE" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SAMPLE_SERVICE_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_LIS_TEST_INDEX_MAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="Int64" />
+    <Property Name="MODIFY_TIME" Type="Int64" />
+    <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Int16" />
+    <Property Name="IS_DELETE" Type="Int16" />
+    <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEST_INDEX_UNIT_SYMBOL" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_ID" Type="Int64" />
+    <Property Name="MACHINE_INDEX_CODE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_INDEX_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_ID" Type="Int64" Nullable="false" />
+    <Property Name="FORMAT_VALUE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="RESULT_COEFFICIENT" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="MACHINE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EXECUTE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="LIS_BAC_ANTIBIOTIC_FK1">
+    <End Role="LIS_ANTIBIOTIC" Type="DataModels.LIS_ANTIBIOTIC" Multiplicity="1" />
+    <End Role="LIS_BAC_ANTIBIOTIC" Type="DataModels.LIS_BAC_ANTIBIOTIC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_ANTIBIOTIC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_BAC_ANTIBIOTIC">
+        <PropertyRef Name="ANTIBIOTIC_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_BAC_ANTIBIOTIC_FK2">
+    <End Role="LIS_BACTERIUM" Type="DataModels.LIS_BACTERIUM" Multiplicity="1" />
+    <End Role="LIS_BAC_ANTIBIOTIC" Type="DataModels.LIS_BAC_ANTIBIOTIC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_BACTERIUM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_BAC_ANTIBIOTIC">
+        <PropertyRef Name="BACTERIUM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_BACTERIUM_FK1">
+    <End Role="LIS_BACTERIUM_FAMILY" Type="DataModels.LIS_BACTERIUM_FAMILY" Multiplicity="1" />
+    <End Role="LIS_BACTERIUM" Type="DataModels.LIS_BACTERIUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_BACTERIUM_FAMILY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_BACTERIUM">
+        <PropertyRef Name="BACTERIUM_FAMILY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_MACHINE_INDEX_FK1">
+    <End Role="LIS_MACHINE" Type="DataModels.LIS_MACHINE" Multiplicity="1" />
+    <End Role="LIS_MACHINE_INDEX" Type="DataModels.LIS_MACHINE_INDEX" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_MACHINE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_MACHINE_INDEX">
+        <PropertyRef Name="MACHINE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_RESULT_FK2">
+    <End Role="LIS_MACHINE" Type="DataModels.LIS_MACHINE" Multiplicity="0..1" />
+    <End Role="LIS_RESULT" Type="DataModels.LIS_RESULT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_MACHINE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_RESULT">
+        <PropertyRef Name="MACHINE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_SAMPLE_SERVICE_FK3">
+    <End Role="LIS_MACHINE" Type="DataModels.LIS_MACHINE" Multiplicity="0..1" />
+    <End Role="LIS_SAMPLE_SERVICE" Type="DataModels.LIS_SAMPLE_SERVICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_MACHINE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_SAMPLE_SERVICE">
+        <PropertyRef Name="MACHINE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_TEST_INDEX_MAP_FK1">
+    <End Role="LIS_MACHINE_INDEX" Type="DataModels.LIS_MACHINE_INDEX" Multiplicity="0..1" />
+    <End Role="LIS_TEST_INDEX_MAP" Type="DataModels.LIS_TEST_INDEX_MAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_MACHINE_INDEX">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_TEST_INDEX_MAP">
+        <PropertyRef Name="MACHINE_INDEX_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_RESULT_FK3">
+    <End Role="LIS_SAMPLE_SERVICE" Type="DataModels.LIS_SAMPLE_SERVICE" Multiplicity="0..1" />
+    <End Role="LIS_RESULT" Type="DataModels.LIS_RESULT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_SAMPLE_SERVICE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_RESULT">
+        <PropertyRef Name="SAMPLE_SERVICE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_SAMPLE_FK1">
+    <End Role="LIS_SAMPLE_STT" Type="DataModels.LIS_SAMPLE_STT" Multiplicity="1" />
+    <End Role="LIS_SAMPLE" Type="DataModels.LIS_SAMPLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_SAMPLE_STT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_SAMPLE">
+        <PropertyRef Name="SAMPLE_STT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_SAMPLE_FK2">
+    <End Role="LIS_SAMPLE_TYPE" Type="DataModels.LIS_SAMPLE_TYPE" Multiplicity="0..1" />
+    <End Role="LIS_SAMPLE" Type="DataModels.LIS_SAMPLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_SAMPLE_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_SAMPLE">
+        <PropertyRef Name="SAMPLE_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_SAMPLE_FK3">
+    <End Role="LIS_SAMPLE_CONDITION" Type="DataModels.LIS_SAMPLE_CONDITION" Multiplicity="0..1" />
+    <End Role="LIS_SAMPLE" Type="DataModels.LIS_SAMPLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_SAMPLE_CONDITION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_SAMPLE">
+        <PropertyRef Name="SAMPLE_CONDITION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_SAMPLE_SERVICE_FK1">
+    <End Role="LIS_SAMPLE" Type="DataModels.LIS_SAMPLE" Multiplicity="1" />
+    <End Role="LIS_SAMPLE_SERVICE" Type="DataModels.LIS_SAMPLE_SERVICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_SAMPLE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_SAMPLE_SERVICE">
+        <PropertyRef Name="SAMPLE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LIS_SAMPLE_SERVICE_FK2">
+    <End Role="LIS_SAMPLE_SERVICE_STT" Type="DataModels.LIS_SAMPLE_SERVICE_STT" Multiplicity="1" />
+    <End Role="LIS_SAMPLE_SERVICE" Type="DataModels.LIS_SAMPLE_SERVICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIS_SAMPLE_SERVICE_STT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LIS_SAMPLE_SERVICE">
+        <PropertyRef Name="SAMPLE_SERVICE_STT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

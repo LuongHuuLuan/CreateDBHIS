@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TYTDataModelsStoreContainer">
+    <EntitySet Name="TYT_DEATH" EntityType="DataModels.Store.TYT_DEATH" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_FETUS_ABORTION" EntityType="DataModels.Store.TYT_FETUS_ABORTION" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_FETUS_BORN" EntityType="DataModels.Store.TYT_FETUS_BORN" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_FETUS_EXAM" EntityType="DataModels.Store.TYT_FETUS_EXAM" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_GDSK" EntityType="DataModels.Store.TYT_GDSK" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_HIV" EntityType="DataModels.Store.TYT_HIV" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_KHH" EntityType="DataModels.Store.TYT_KHH" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_MALARIA" EntityType="DataModels.Store.TYT_MALARIA" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_NERVES" EntityType="DataModels.Store.TYT_NERVES" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_TUBERCULOSIS" EntityType="DataModels.Store.TYT_TUBERCULOSIS" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_UNINFECT" EntityType="DataModels.Store.TYT_UNINFECT" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_UNINFECT_ICD" EntityType="DataModels.Store.TYT_UNINFECT_ICD" store:Type="Tables" Schema="TYT_RS" />
+    <EntitySet Name="TYT_UNINFECT_ICD_GROUP" EntityType="DataModels.Store.TYT_UNINFECT_ICD_GROUP" store:Type="Tables" Schema="TYT_RS" />
+    <AssociationSet Name="TYT_UNINFECT_ICD_FK1" Association="DataModels.Store.TYT_UNINFECT_ICD_FK1">
+      <End Role="TYT_UNINFECT_ICD_GROUP" EntitySet="TYT_UNINFECT_ICD_GROUP" />
+      <End Role="TYT_UNINFECT_ICD" EntitySet="TYT_UNINFECT_ICD" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TYT_DEATH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="DEATH_TIME" Type="number" Precision="14" />
+    <Property Name="DEATH_LOCATION_TYPE_ID" Type="number" Precision="19" />
+    <Property Name="IS_CBYT_CARE" Type="number" Precision="2" />
+    <Property Name="DEATH_CAUSE" Type="varchar2" MaxLength="500" />
+    <Property Name="COLLECTOR" Type="varchar2" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="varchar2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TYT_FETUS_ABORTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+    <Property Name="IS_SINGLE" Type="number" Precision="2" />
+    <Property Name="PARA_CHILD_COUNT" Type="number" Precision="19" />
+    <Property Name="LAST_MENSES_TIME" Type="number" Precision="14" />
+    <Property Name="DIAGNOSE_TEST" Type="number" Precision="19" />
+    <Property Name="ABORTION_METHOD" Type="varchar2" MaxLength="100" />
+    <Property Name="SM_RESULT" Type="number" Precision="19" />
+    <Property Name="OBSTETRIC_COMPLICATION" Type="varchar2" MaxLength="100" />
+    <Property Name="IS_DEATH" Type="number" Precision="2" />
+    <Property Name="EXECUTE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="EXAM_AFTER_TWO_WEEK" Type="number" Precision="2" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="ABORTION_TIME" Type="number" Precision="14" />
+  </EntityType>
+  <EntityType Name="TYT_FETUS_BORN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+    <Property Name="IS_FETUS_MANAGE" Type="number" Precision="2" />
+    <Property Name="IS_UV_FULL" Type="number" Precision="2" />
+    <Property Name="CHECK_CASE" Type="number" Precision="19" />
+    <Property Name="IS_HIV_BEFORE" Type="number" Precision="2" />
+    <Property Name="IS_HIV_BORN" Type="number" Precision="2" />
+    <Property Name="PARA_NORMAL_COUNT" Type="number" Precision="19" />
+    <Property Name="PARA_PREMATURELY_COUNT" Type="number" Precision="19" />
+    <Property Name="PARA_MISCARRIAGE_COUNT" Type="number" Precision="19" />
+    <Property Name="PARA_CHILD_COUNT" Type="number" Precision="19" />
+    <Property Name="BORN_METHOD" Type="varchar2" MaxLength="100" />
+    <Property Name="OBSTETRIC_COMPLICATION" Type="varchar2" MaxLength="100" />
+    <Property Name="IS_DEATH" Type="number" Precision="2" />
+    <Property Name="CHILD_GENDER_ID" Type="number" Precision="19" />
+    <Property Name="CHILD_WEIGHT" Type="number" Precision="19" Scale="2" />
+    <Property Name="CHILD_STATUS" Type="varchar2" MaxLength="100" />
+    <Property Name="IS_CHILD_DEATH" Type="number" Precision="2" />
+    <Property Name="BORN_PLACE" Type="varchar2" MaxLength="100" />
+    <Property Name="MIDWIFE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="IS_BREASTFEEDING_FIRST_HOUR" Type="number" Precision="2" />
+    <Property Name="IS_K1" Type="number" Precision="2" />
+    <Property Name="FIRST_WEEK_EXAM" Type="varchar2" MaxLength="100" />
+    <Property Name="EXAM_742" Type="varchar2" MaxLength="100" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_FETUS_EXAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+    <Property Name="LAST_MENSES_TIME" Type="number" Precision="14" />
+    <Property Name="WEEK" Type="number" Precision="19" />
+    <Property Name="BORN_TIME" Type="number" Precision="14" />
+    <Property Name="FETUS_COUNT" Type="number" Precision="19" />
+    <Property Name="WEIGHT" Type="number" Precision="19" Scale="2" />
+    <Property Name="HEIGHT" Type="number" Precision="19" Scale="2" />
+    <Property Name="BLOOD_PRESSURE_MAX" Type="number" Precision="19" />
+    <Property Name="BLOOD_PRESSURE_MIN" Type="number" Precision="19" />
+    <Property Name="UTERUS" Type="number" Precision="19" Scale="2" />
+    <Property Name="BELLY" Type="number" Precision="19" />
+    <Property Name="PELVIC" Type="number" Precision="19" />
+    <Property Name="BLOOD" Type="number" Precision="19" />
+    <Property Name="PROTEIN" Type="number" Precision="19" />
+    <Property Name="IS_HIV_TEST" Type="number" Precision="2" />
+    <Property Name="OTHER_TEST" Type="varchar2" MaxLength="100" />
+    <Property Name="BORN_GUESS" Type="varchar2" MaxLength="100" />
+    <Property Name="UV_COUNT" Type="number" Precision="19" />
+    <Property Name="IS_FOLIC" Type="number" Precision="2" />
+    <Property Name="FETUS_HEART" Type="number" Precision="19" />
+    <Property Name="FETUS_POSITION" Type="varchar2" MaxLength="100" />
+    <Property Name="DOCTOR_LOGINNAME" Type="varchar2" MaxLength="50" />
+    <Property Name="DOCTOR_USERNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="EXAM_TIME" Type="number" Precision="14" />
+    <Property Name="HEALTH_HISTORY" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_GDSK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="GDSK_TIME" Type="number" Precision="14" />
+    <Property Name="GDSK_PLACE" Type="varchar2" MaxLength="100" />
+    <Property Name="CONTENT" Type="varchar2" MaxLength="2000" />
+    <Property Name="FORM" Type="varchar2" MaxLength="500" />
+    <Property Name="TARGET" Type="varchar2" MaxLength="500" />
+    <Property Name="AUDIENCE_COUNT" Type="number" Precision="19" />
+    <Property Name="MEDIA" Type="varchar2" MaxLength="500" />
+    <Property Name="AMOUNT_OF_TIME" Type="varchar2" MaxLength="500" />
+    <Property Name="EXECUTE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_HIV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="OBJECT_TYPE" Type="varchar2" MaxLength="100" />
+    <Property Name="FETUS_TIME" Type="number" Precision="14" />
+    <Property Name="HIV_DIAGNOSIS_TIME" Type="number" Precision="14" />
+    <Property Name="HIV_DIAGNOSIS_PLACE" Type="varchar2" MaxLength="100" />
+    <Property Name="ARV_PLACE" Type="varchar2" MaxLength="100" />
+    <Property Name="DEATH_TIME" Type="number" Precision="14" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_KHH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+    <Property Name="IS_SINGLE" Type="number" Precision="2" />
+    <Property Name="IS_IUCD" Type="number" Precision="2" />
+    <Property Name="IS_STERILIZE" Type="number" Precision="2" />
+    <Property Name="IS_PILL_V" Type="number" Precision="2" />
+    <Property Name="IS_PILL_T" Type="number" Precision="2" />
+    <Property Name="IS_PILL_C" Type="number" Precision="2" />
+    <Property Name="IS_CONDOM" Type="number" Precision="2" />
+    <Property Name="EXECUTE_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="OBSTETRIC_COMPLICATION" Type="varchar2" MaxLength="100" />
+    <Property Name="IS_DEATH" Type="number" Precision="2" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_MALARIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="IS_HAS_FETUS" Type="number" Precision="2" />
+    <Property Name="IS_FEVER" Type="number" Precision="2" />
+    <Property Name="TEST_TYPE" Type="number" Precision="19" />
+    <Property Name="TEST_RESULT" Type="varchar2" MaxLength="4000" />
+    <Property Name="DIAGNOSE" Type="varchar2" MaxLength="1000" />
+    <Property Name="TREATMENT_RESULT" Type="varchar2" MaxLength="100" />
+    <Property Name="MEDICINE" Type="varchar2" MaxLength="4000" />
+    <Property Name="MEDICINE_CTDT" Type="varchar2" MaxLength="4000" />
+    <Property Name="DIAGNOSE_TIME" Type="number" Precision="14" />
+    <Property Name="DIAGNOSE_PLACE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_NERVES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="DIAGNOSE_TTPL" Type="varchar2" MaxLength="500" />
+    <Property Name="DIAGNOSE_DK" Type="varchar2" MaxLength="500" />
+    <Property Name="DIAGNOSE_TC" Type="varchar2" MaxLength="500" />
+    <Property Name="PHCN_RESULT" Type="number" Precision="19" />
+    <Property Name="IS_HOME_CHECK" Type="number" Precision="2" />
+    <Property Name="MEDICINE_MONITOR" Type="varchar2" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="TYT_TUBERCULOSIS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="TYT_IN_TIME" Type="number" Precision="14" />
+    <Property Name="DTCKS_CODE" Type="varchar2" MaxLength="20" />
+    <Property Name="DISEASE_TYPE" Type="number" Precision="19" />
+    <Property Name="TREATMENT_RESULT" Type="number" Precision="19" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_UNINFECT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+    <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+    <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+    <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+    <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+    <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+    <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+    <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+    <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+    <Property Name="ICD_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="ICD_NAME" Type="varchar2" MaxLength="500" />
+    <Property Name="DIAGNOSIS_TIME" Type="number" Precision="14" />
+    <Property Name="DIAGNOSIS_PLACE" Type="varchar2" MaxLength="100" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYT_UNINFECT_ICD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="UNINFECT_ICD_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+    <Property Name="UNINFECT_ICD_NAME" Type="varchar2" Nullable="false" MaxLength="500" />
+    <Property Name="UNINFECT_ICD_GROUP_ID" Type="number" Nullable="false" Precision="19" />
+  </EntityType>
+  <EntityType Name="TYT_UNINFECT_ICD_GROUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATE_TIME" Type="number" Precision="14" />
+    <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+    <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+    <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+    <Property Name="IS_DELETE" Type="number" Precision="2" />
+    <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+    <Property Name="UNINFECT_ICD_GROUP_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+    <Property Name="UNINFECT_ICD_GROUP_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Association Name="TYT_UNINFECT_ICD_FK1">
+    <End Role="TYT_UNINFECT_ICD_GROUP" Type="DataModels.Store.TYT_UNINFECT_ICD_GROUP" Multiplicity="1" />
+    <End Role="TYT_UNINFECT_ICD" Type="DataModels.Store.TYT_UNINFECT_ICD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYT_UNINFECT_ICD_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TYT_UNINFECT_ICD">
+        <PropertyRef Name="UNINFECT_ICD_GROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

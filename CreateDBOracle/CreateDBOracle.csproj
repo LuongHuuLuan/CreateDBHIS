@@ -1,0 +1,1163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6137F487-2C3E-4281-883B-AEF0973725F8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CreateDBOracle</RootNamespace>
+    <AssemblyName>CreateDBOracle</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.25.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.25.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.3.0\lib\net48\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.3.0\lib\net462\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.21.9.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.21.9.0\lib\net462\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContextModel\ACS_ACTIVITY_LOG.cs" />
+    <Compile Include="DataContextModel\ACS_ACTIVITY_TYPE.cs" />
+    <Compile Include="DataContextModel\ACS_APPLICATION.cs" />
+    <Compile Include="DataContextModel\ACS_APPLICATION_ROLE.cs" />
+    <Compile Include="DataContextModel\ACS_APP_OTP_TYPE.cs" />
+    <Compile Include="DataContextModel\ACS_AUTHEN_REQUEST.cs" />
+    <Compile Include="DataContextModel\ACS_AUTHOR_SYSTEM.cs" />
+    <Compile Include="DataContextModel\ACS_CONTROL.cs" />
+    <Compile Include="DataContextModel\ACS_CONTROL_ROLE.cs" />
+    <Compile Include="DataContextModel\ACS_CREDENTIAL_DATA.cs" />
+    <Compile Include="DataContextModel\ACS_MODULE.cs" />
+    <Compile Include="DataContextModel\ACS_MODULE_GROUP.cs" />
+    <Compile Include="DataContextModel\ACS_MODULE_ROLE.cs" />
+    <Compile Include="DataContextModel\ACS_OTP.cs" />
+    <Compile Include="DataContextModel\ACS_OTP_TYPE.cs" />
+    <Compile Include="DataContextModel\ACS_ROLE.cs" />
+    <Compile Include="DataContextModel\ACS_ROLE_AUTHOR.cs" />
+    <Compile Include="DataContextModel\ACS_ROLE_BASE.cs" />
+    <Compile Include="DataContextModel\ACS_ROLE_USER.cs" />
+    <Compile Include="DataContextModel\ACS_TOKEN.cs" />
+    <Compile Include="DataContextModel\ACS_USER.cs" />
+    <Compile Include="DataContextModel\D_HIS_CARD_PATIENT.cs" />
+    <Compile Include="DataContextModel\D_HIS_EXP_MEST_DETAIL.cs" />
+    <Compile Include="DataContextModel\D_HIS_EXP_MEST_DETAIL_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_MATERIAL_TYPE_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_MEDICINE_TYPE_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_MEDI_STOCK_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_MEDI_STOCK_2.cs" />
+    <Compile Include="DataContextModel\D_HIS_PATIENT.cs" />
+    <Compile Include="DataContextModel\D_HIS_PATIENT_CARD.cs" />
+    <Compile Include="DataContextModel\D_HIS_PATIENT_PROGRAM.cs" />
+    <Compile Include="DataContextModel\D_HIS_PATIENT_TREATMENT.cs" />
+    <Compile Include="DataContextModel\D_HIS_PATIENT_TYPE_ALTER_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_SERE_SERV_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_SERVICE_REQ_1.cs" />
+    <Compile Include="DataContextModel\D_HIS_SERVICE_REQ_2.cs" />
+    <Compile Include="DataContextModel\D_HIS_TREATMENT_BED_ROOM_1.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_BODY_PART.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_CARE.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_HELMET.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_HURT.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_HURT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_LOCATION.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_POISON.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_RESULT.cs" />
+    <Compile Include="DataContextModel\HIS_ACCIDENT_VEHICLE.cs" />
+    <Compile Include="DataContextModel\HIS_ACCOUNT_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_ACIN_INTERACTIVE.cs" />
+    <Compile Include="DataContextModel\HIS_ACTIVE_INGREDIENT.cs" />
+    <Compile Include="DataContextModel\HIS_ADR.cs" />
+    <Compile Include="DataContextModel\HIS_ADR_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_AGE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_ALERT.cs" />
+    <Compile Include="DataContextModel\HIS_ALLERGENIC.cs" />
+    <Compile Include="DataContextModel\HIS_ALLERGY_CARD.cs" />
+    <Compile Include="DataContextModel\HIS_ANTIBIOTIC_MICROBI.cs" />
+    <Compile Include="DataContextModel\HIS_ANTIBIOTIC_NEW_REG.cs" />
+    <Compile Include="DataContextModel\HIS_ANTIBIOTIC_OLD_REG.cs" />
+    <Compile Include="DataContextModel\HIS_ANTIBIOTIC_REQUEST.cs" />
+    <Compile Include="DataContextModel\HIS_ANTICIPATE.cs" />
+    <Compile Include="DataContextModel\HIS_ANTICIPATE_BLTY.cs" />
+    <Compile Include="DataContextModel\HIS_ANTICIPATE_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_ANTICIPATE_METY.cs" />
+    <Compile Include="DataContextModel\HIS_ANTIGEN.cs" />
+    <Compile Include="DataContextModel\HIS_ANTIGEN_METY.cs" />
+    <Compile Include="DataContextModel\HIS_APPOINTMENT.cs" />
+    <Compile Include="DataContextModel\HIS_APPOINTMENT_PERIOD.cs" />
+    <Compile Include="DataContextModel\HIS_APPOINTMENT_SERV.cs" />
+    <Compile Include="DataContextModel\HIS_AREA.cs" />
+    <Compile Include="DataContextModel\HIS_ASSESSMENT_MEMBER.cs" />
+    <Compile Include="DataContextModel\HIS_ASSESSMENT_OBJECT.cs" />
+    <Compile Include="DataContextModel\HIS_ASSIGN_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_ATC.cs" />
+    <Compile Include="DataContextModel\HIS_AWARENESS.cs" />
+    <Compile Include="DataContextModel\HIS_BABY.cs" />
+    <Compile Include="DataContextModel\HIS_BANK.cs" />
+    <Compile Include="DataContextModel\HIS_BCS_MATY_REQ_DT.cs" />
+    <Compile Include="DataContextModel\HIS_BCS_MATY_REQ_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_BCS_METY_REQ_DT.cs" />
+    <Compile Include="DataContextModel\HIS_BCS_METY_REQ_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_BED.cs" />
+    <Compile Include="DataContextModel\HIS_BED_BSTY.cs" />
+    <Compile Include="DataContextModel\HIS_BED_LOG.cs" />
+    <Compile Include="DataContextModel\HIS_BED_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_BED_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BHYT_BLACKLIST.cs" />
+    <Compile Include="DataContextModel\HIS_BHYT_PARAM.cs" />
+    <Compile Include="DataContextModel\HIS_BHYT_WHITELIST.cs" />
+    <Compile Include="DataContextModel\HIS_BID.cs" />
+    <Compile Include="DataContextModel\HIS_BID_BLOOD_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BID_MATERIAL_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BID_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BID_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BILL_FUND.cs" />
+    <Compile Include="DataContextModel\HIS_BILL_GOODS.cs" />
+    <Compile Include="DataContextModel\HIS_BIRTH_CERT_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD_ABO.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD_GIVER.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD_RH.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BLOOD_VOLUME.cs" />
+    <Compile Include="DataContextModel\HIS_BLTY_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_BLTY_VOLUME.cs" />
+    <Compile Include="DataContextModel\HIS_BODY_PART.cs" />
+    <Compile Include="DataContextModel\HIS_BORN_POSITION.cs" />
+    <Compile Include="DataContextModel\HIS_BORN_RESULT.cs" />
+    <Compile Include="DataContextModel\HIS_BORN_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_BRANCH.cs" />
+    <Compile Include="DataContextModel\HIS_BRANCH_TIME.cs" />
+    <Compile Include="DataContextModel\HIS_CACHE_MONITOR.cs" />
+    <Compile Include="DataContextModel\HIS_CANCEL_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_CARD.cs" />
+    <Compile Include="DataContextModel\HIS_CARE.cs" />
+    <Compile Include="DataContextModel\HIS_CAREER.cs" />
+    <Compile Include="DataContextModel\HIS_CARER_CARD.cs" />
+    <Compile Include="DataContextModel\HIS_CARER_CARD_BORROW.cs" />
+    <Compile Include="DataContextModel\HIS_CARE_DETAIL.cs" />
+    <Compile Include="DataContextModel\HIS_CARE_SUM.cs" />
+    <Compile Include="DataContextModel\HIS_CARE_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_CARE_TEMP_DETAIL.cs" />
+    <Compile Include="DataContextModel\HIS_CARE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_CARO_ACCOUNT_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_CARO_DEPARTMENT.cs" />
+    <Compile Include="DataContextModel\HIS_CASHIER_ADD_CONFIG.cs" />
+    <Compile Include="DataContextModel\HIS_CASHIER_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_CASHOUT.cs" />
+    <Compile Include="DataContextModel\HIS_CONFIG.cs" />
+    <Compile Include="DataContextModel\HIS_CONFIG_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_CONTACT.cs" />
+    <Compile Include="DataContextModel\HIS_CONTACT_POINT.cs" />
+    <Compile Include="DataContextModel\HIS_CONTRAINDICATION.cs" />
+    <Compile Include="DataContextModel\HIS_CO_TREATMENT.cs" />
+    <Compile Include="DataContextModel\HIS_DATA_STORE.cs" />
+    <Compile Include="DataContextModel\HIS_DB_LOG.cs" />
+    <Compile Include="DataContextModel\HIS_DEATH_CAUSE.cs" />
+    <Compile Include="DataContextModel\HIS_DEATH_CERT_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_DEATH_WITHIN.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE_EKIP_USER.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE_INVITE_USER.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_DEBATE_USER.cs" />
+    <Compile Include="DataContextModel\HIS_DEBT_GOODS.cs" />
+    <Compile Include="DataContextModel\HIS_DEPARTMENT.cs" />
+    <Compile Include="DataContextModel\HIS_DEPARTMENT_TRAN.cs" />
+    <Compile Include="DataContextModel\HIS_DEPOSIT_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_DEPOSIT_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_DESK.cs" />
+    <Compile Include="DataContextModel\HIS_DHST.cs" />
+    <Compile Include="DataContextModel\HIS_DIIM_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_DISEASE_RELATION.cs" />
+    <Compile Include="DataContextModel\HIS_DISEASE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_DISPENSE.cs" />
+    <Compile Include="DataContextModel\HIS_DISPENSE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_DOCUMENT_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_DOC_HOLD_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_DOSAGE_FORM.cs" />
+    <Compile Include="DataContextModel\HIS_DRUG_INTERVENTION.cs" />
+    <Compile Include="DataContextModel\HIS_EINVOICE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_EKIP.cs" />
+    <Compile Include="DataContextModel\HIS_EKIP_PLAN.cs" />
+    <Compile Include="DataContextModel\HIS_EKIP_PLAN_USER.cs" />
+    <Compile Include="DataContextModel\HIS_EKIP_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_EKIP_TEMP_USER.cs" />
+    <Compile Include="DataContextModel\HIS_EKIP_USER.cs" />
+    <Compile Include="DataContextModel\HIS_EMERGENCY_WTIME.cs" />
+    <Compile Include="DataContextModel\HIS_EMOTIONLESS_METHOD.cs" />
+    <Compile Include="DataContextModel\HIS_EMOTIONLESS_RESULT.cs" />
+    <Compile Include="DataContextModel\HIS_EMPLOYEE.cs" />
+    <Compile Include="DataContextModel\HIS_EMPLOYEE_SCHEDULE.cs" />
+    <Compile Include="DataContextModel\HIS_EMR_COVER_CONFIG.cs" />
+    <Compile Include="DataContextModel\HIS_EMR_COVER_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_EMR_DOCUMENT_STT.cs" />
+    <Compile Include="DataContextModel\HIS_EMR_FORM.cs" />
+    <Compile Include="DataContextModel\HIS_EMTE_MATERIAL_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_EMTE_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_EQUIPMENT_SET.cs" />
+    <Compile Include="DataContextModel\HIS_EQUIPMENT_SET_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_EVENTS_CAUSES_DEATH.cs" />
+    <Compile Include="DataContextModel\HIS_EXAM_SCHEDULE.cs" />
+    <Compile Include="DataContextModel\HIS_EXAM_SERE_DIRE.cs" />
+    <Compile Include="DataContextModel\HIS_EXAM_SERVICE_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_EXECUTE_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_EXECUTE_ROLE.cs" />
+    <Compile Include="DataContextModel\HIS_EXECUTE_ROLE_USER.cs" />
+    <Compile Include="DataContextModel\HIS_EXECUTE_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_EXE_SERVICE_MODULE.cs" />
+    <Compile Include="DataContextModel\HIS_EXME_REASON_CFG.cs" />
+    <Compile Include="DataContextModel\HIS_EXPIRED_DATE_CFG.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_BLTY_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_BLOOD.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_BLTY_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_DELETED.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_MATERIAL.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_MATY_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_MEDICINE.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_METY_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_STT.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_TEMPLATE.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_EXP_MEST_USER.cs" />
+    <Compile Include="DataContextModel\HIS_EXRO_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_EYE_SURGRY_DESC.cs" />
+    <Compile Include="DataContextModel\HIS_FILE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_FILM_SIZE.cs" />
+    <Compile Include="DataContextModel\HIS_FINANCE_PERIOD.cs" />
+    <Compile Include="DataContextModel\HIS_FORM_TYPE_CFG.cs" />
+    <Compile Include="DataContextModel\HIS_FORM_TYPE_CFG_DATA.cs" />
+    <Compile Include="DataContextModel\HIS_FUEX_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_FUND.cs" />
+    <Compile Include="DataContextModel\HIS_GENDER.cs" />
+    <Compile Include="DataContextModel\HIS_HEALTH_EXAM_RANK.cs" />
+    <Compile Include="DataContextModel\HIS_HEIN_APPROVAL.cs" />
+    <Compile Include="DataContextModel\HIS_HEIN_SERVICE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_HIV_TREATMENT.cs" />
+    <Compile Include="DataContextModel\HIS_HOLD_RETURN.cs" />
+    <Compile Include="DataContextModel\HIS_HORE_DHTY.cs" />
+    <Compile Include="DataContextModel\HIS_HORE_HANDOVER.cs" />
+    <Compile Include="DataContextModel\HIS_HORE_HANDOVER_STT.cs" />
+    <Compile Include="DataContextModel\HIS_HORE_HOHA.cs" />
+    <Compile Include="DataContextModel\HIS_HOSPITALIZE_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_HTU.cs" />
+    <Compile Include="DataContextModel\HIS_ICD.cs" />
+    <Compile Include="DataContextModel\HIS_ICD_CM.cs" />
+    <Compile Include="DataContextModel\HIS_ICD_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_ICD_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_BLOOD.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_MATERIAL.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_MATE_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_MEDICINE.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_MEDI_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_PAY.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_PROPOSE.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_STT.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_TYPE_USER.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_MEST_USER.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_SOURCE.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_USER_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_IMP_USER_TEMP_DT.cs" />
+    <Compile Include="DataContextModel\HIS_INFUSION.cs" />
+    <Compile Include="DataContextModel\HIS_INFUSION_SUM.cs" />
+    <Compile Include="DataContextModel\HIS_INTERACTIVE_GRADE.cs" />
+    <Compile Include="DataContextModel\HIS_INVOICE.cs" />
+    <Compile Include="DataContextModel\HIS_INVOICE_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_INVOICE_DETAIL.cs" />
+    <Compile Include="DataContextModel\HIS_INVOICE_PRINT.cs" />
+    <Compile Include="DataContextModel\HIS_KSK.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_ACCESS.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_CONTRACT.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_DRIVER.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_DRIVER_CAR.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_GENERAL.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_OCCUPATIONAL.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_OTHER.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_OVER_EIGHTEEN.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_PERIOD_DRIVER.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_UNDER_EIGHTEEN.cs" />
+    <Compile Include="DataContextModel\HIS_KSK_UNEI_VATY.cs" />
+    <Compile Include="DataContextModel\HIS_LICENSE_CLASS.cs" />
+    <Compile Include="DataContextModel\HIS_LOCATION_STORE.cs" />
+    <Compile Include="DataContextModel\HIS_MACHINE.cs" />
+    <Compile Include="DataContextModel\HIS_MACHINE_SERV_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_MANUFACTURER.cs" />
+    <Compile Include="DataContextModel\HIS_MATERIAL.cs" />
+    <Compile Include="DataContextModel\HIS_MATERIAL_BEAN.cs" />
+    <Compile Include="DataContextModel\HIS_MATERIAL_MATERIAL.cs" />
+    <Compile Include="DataContextModel\HIS_MATERIAL_PATY.cs" />
+    <Compile Include="DataContextModel\HIS_MATERIAL_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_MATERIAL_TYPE_MAP.cs" />
+    <Compile Include="DataContextModel\HIS_MATY_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICAL_ASSESSMENT.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICAL_CONTRACT.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_BEAN.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_INTERACTIVE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_LINE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_MATERIAL.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_MEDICINE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_PATY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_TYPE_ACIN.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_TYPE_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_TYPE_TUT.cs" />
+    <Compile Include="DataContextModel\HIS_MEDICINE_USE_FORM.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_CONTRACT_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_CONTRACT_METY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_ORG.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_REACT.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_REACT_SUM.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_REACT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_RECORD.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_RECORD_BORROW.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_RECORD_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK_BLTY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK_EXTY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK_IMTY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK_METY.cs" />
+    <Compile Include="DataContextModel\HIS_MEDI_STOCK_PERIOD.cs" />
+    <Compile Include="DataContextModel\HIS_MEMA_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_MESSAGE.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_INVENTORY.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_INVE_USER.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_MATY_DEPA.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_METY_DEPA.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_METY_UNIT.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PATIENT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PATY_SUB.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PATY_TRTY.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PERIOD_BLOOD.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PERIOD_BLTY.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PERIOD_MATE.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PERIOD_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PERIOD_MEDI.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_PERIOD_METY.cs" />
+    <Compile Include="DataContextModel\HIS_MEST_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_METY_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_METY_METY.cs" />
+    <Compile Include="DataContextModel\HIS_METY_PRODUCT.cs" />
+    <Compile Include="DataContextModel\HIS_MILITARY_RANK.cs" />
+    <Compile Include="DataContextModel\HIS_MIXED_MEDICINE.cs" />
+    <Compile Include="DataContextModel\HIS_MR_CHECKLIST.cs" />
+    <Compile Include="DataContextModel\HIS_MR_CHECK_ITEM.cs" />
+    <Compile Include="DataContextModel\HIS_MR_CHECK_ITEM_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_MR_CHECK_SUMMARY.cs" />
+    <Compile Include="DataContextModel\HIS_NEXT_TREA_INTR.cs" />
+    <Compile Include="DataContextModel\HIS_NONE_MEDI_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_NUM_ORDER_BLOCK.cs" />
+    <Compile Include="DataContextModel\HIS_NUM_ORDER_ISSUE.cs" />
+    <Compile Include="DataContextModel\HIS_OBEY_CONTRAINDI.cs" />
+    <Compile Include="DataContextModel\HIS_ORDINAL.cs" />
+    <Compile Include="DataContextModel\HIS_ORDINAL_REUSE.cs" />
+    <Compile Include="DataContextModel\HIS_OTHER_PAY_SOURCE.cs" />
+    <Compile Include="DataContextModel\HIS_OWE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_PAAN_LIQUID.cs" />
+    <Compile Include="DataContextModel\HIS_PAAN_POSITION.cs" />
+    <Compile Include="DataContextModel\HIS_PACKAGE.cs" />
+    <Compile Include="DataContextModel\HIS_PACKAGE_DETAIL.cs" />
+    <Compile Include="DataContextModel\HIS_PACKING_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_CASE.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_CLASSIFY.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_OBSERVATION.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_PROGRAM.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_TYPE_ALLOW.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_TYPE_ALTER.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_TYPE_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_PATIENT_TYPE_SUB.cs" />
+    <Compile Include="DataContextModel\HIS_PAY_FORM.cs" />
+    <Compile Include="DataContextModel\HIS_PERIOD_DRIVER_DITY.cs" />
+    <Compile Include="DataContextModel\HIS_PERMISSION.cs" />
+    <Compile Include="DataContextModel\HIS_PETROLEUM.cs" />
+    <Compile Include="DataContextModel\HIS_POSITION.cs" />
+    <Compile Include="DataContextModel\HIS_PREPARE.cs" />
+    <Compile Include="DataContextModel\HIS_PREPARE_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_PREPARE_METY.cs" />
+    <Compile Include="DataContextModel\HIS_PRIORITY_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_PROCESSING_METHOD.cs" />
+    <Compile Include="DataContextModel\HIS_PROGRAM.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_APPROVAL_STT.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_CALENDAR.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_CATASTROPHE.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_CONDITION.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_GROUP_BEST.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_HIGH_TECH.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_METHOD.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_PRIORITY.cs" />
+    <Compile Include="DataContextModel\HIS_PTTT_TABLE.cs" />
+    <Compile Include="DataContextModel\HIS_QC_NORMATION.cs" />
+    <Compile Include="DataContextModel\HIS_QC_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_RATION_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_RATION_SCHEDULE.cs" />
+    <Compile Include="DataContextModel\HIS_RATION_SUM.cs" />
+    <Compile Include="DataContextModel\HIS_RATION_SUM_STT.cs" />
+    <Compile Include="DataContextModel\HIS_RATION_TIME.cs" />
+    <Compile Include="DataContextModel\HIS_RECEPTION_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_REFECTORY.cs" />
+    <Compile Include="DataContextModel\HIS_REGIMEN_HIV.cs" />
+    <Compile Include="DataContextModel\HIS_REGISTER_GATE.cs" />
+    <Compile Include="DataContextModel\HIS_REGISTER_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_REHA_SUM.cs" />
+    <Compile Include="DataContextModel\HIS_REHA_TRAIN.cs" />
+    <Compile Include="DataContextModel\HIS_REHA_TRAIN_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_REHA_TRAIN_UNIT.cs" />
+    <Compile Include="DataContextModel\HIS_REJECT_ALERT.cs" />
+    <Compile Include="DataContextModel\HIS_REMUNERATION.cs" />
+    <Compile Include="DataContextModel\HIS_REPAY_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_REPORT_TYPE_CAT.cs" />
+    <Compile Include="DataContextModel\HIS_REST_RETR_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_ROOM_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_ROOM_SARO.cs" />
+    <Compile Include="DataContextModel\HIS_ROOM_TIME.cs" />
+    <Compile Include="DataContextModel\HIS_ROOM_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_ROOM_TYPE_MODULE.cs" />
+    <Compile Include="DataContextModel\HIS_SALE.cs" />
+    <Compile Include="DataContextModel\HIS_SALE_PROFIT_CFG.cs" />
+    <Compile Include="DataContextModel\HIS_SAMPLE_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_SARO_EXRO.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_CHANGE_DEBT.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_IS_WAIT_CHILD.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_BILL.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_DEBT.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_DEPOSIT.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_EXT.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_FILE.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_PTTT.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_PTTT_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_RATION.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_REHA.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_SUIN.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_TEIN.cs" />
+    <Compile Include="DataContextModel\HIS_SERE_SERV_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_CHANGE_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_CONDITION.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_FOLLOW.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_HEIN.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_MACHINE.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_METY.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_NUM_ORDER.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_PACKAGE.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_PATY.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_RATI.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_REQ_MATY.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_REQ_METY.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_REQ_STT.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_REQ_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_RERE_TIME.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_RETY_CAT.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_SAME.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_SERVICE_UNIT.cs" />
+    <Compile Include="DataContextModel\HIS_SERV_SEGR.cs" />
+    <Compile Include="DataContextModel\HIS_SESE_DEPO_REPAY.cs" />
+    <Compile Include="DataContextModel\HIS_SESE_PTTT_METHOD.cs" />
+    <Compile Include="DataContextModel\HIS_SESE_TRANS_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_SEVERE_ILLNESS_INFO.cs" />
+    <Compile Include="DataContextModel\HIS_SKIN_SURGERY_DESC.cs" />
+    <Compile Include="DataContextModel\HIS_SOURCE_MEDICINE.cs" />
+    <Compile Include="DataContextModel\HIS_SPECIALITY.cs" />
+    <Compile Include="DataContextModel\HIS_SPEED_UNIT.cs" />
+    <Compile Include="DataContextModel\HIS_STATION.cs" />
+    <Compile Include="DataContextModel\HIS_STENT_CONCLUDE.cs" />
+    <Compile Include="DataContextModel\HIS_STORAGE_CONDITION.cs" />
+    <Compile Include="DataContextModel\HIS_SUBCLINICAL_RS_ADD.cs" />
+    <Compile Include="DataContextModel\HIS_SUIM_INDEX.cs" />
+    <Compile Include="DataContextModel\HIS_SUIM_INDEX_UNIT.cs" />
+    <Compile Include="DataContextModel\HIS_SUIM_SETY_SUIN.cs" />
+    <Compile Include="DataContextModel\HIS_SUPPLIER.cs" />
+    <Compile Include="DataContextModel\HIS_SURG_REMUNERATION.cs" />
+    <Compile Include="DataContextModel\HIS_SURG_REMU_DETAIL.cs" />
+    <Compile Include="DataContextModel\HIS_TEST_INDEX.cs" />
+    <Compile Include="DataContextModel\HIS_TEST_INDEX_GROUP.cs" />
+    <Compile Include="DataContextModel\HIS_TEST_INDEX_RANGE.cs" />
+    <Compile Include="DataContextModel\HIS_TEST_INDEX_UNIT.cs" />
+    <Compile Include="DataContextModel\HIS_TEST_SAMPLE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_TEST_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_TEXT_LIB.cs" />
+    <Compile Include="DataContextModel\HIS_TRACKING.cs" />
+    <Compile Include="DataContextModel\HIS_TRACKING_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_TRANSACTION.cs" />
+    <Compile Include="DataContextModel\HIS_TRANSACTION_EXP.cs" />
+    <Compile Include="DataContextModel\HIS_TRANSACTION_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_TRANSFUSION.cs" />
+    <Compile Include="DataContextModel\HIS_TRANSFUSION_SUM.cs" />
+    <Compile Include="DataContextModel\HIS_TRANS_REQ.cs" />
+    <Compile Include="DataContextModel\HIS_TRAN_PATI_FORM.cs" />
+    <Compile Include="DataContextModel\HIS_TRAN_PATI_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_TRAN_PATI_TECH.cs" />
+    <Compile Include="DataContextModel\HIS_TRAN_PATI_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_BED_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_BORROW.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_END_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_END_TYPE_EXT.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_FILE.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_LOGGING.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_LOG_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_RESULT.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_STT.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_TREATMENT_UNLIMIT.cs" />
+    <Compile Include="DataContextModel\HIS_UNLIMIT_REASON.cs" />
+    <Compile Include="DataContextModel\HIS_UNLIMIT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_USER_ACCOUNT_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_USER_GROUP_TEMP.cs" />
+    <Compile Include="DataContextModel\HIS_USER_GROUP_TEMP_DT.cs" />
+    <Compile Include="DataContextModel\HIS_USER_INVOICE_BOOK.cs" />
+    <Compile Include="DataContextModel\HIS_USER_ROOM.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION_EXAM.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION_REACT.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION_RESULT.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION_STT.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION_VRPL.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINATION_VRTY.cs" />
+    <Compile Include="DataContextModel\HIS_VACCINE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_VACC_APPOINTMENT.cs" />
+    <Compile Include="DataContextModel\HIS_VACC_EXAM_RESULT.cs" />
+    <Compile Include="DataContextModel\HIS_VACC_HEALTH_STT.cs" />
+    <Compile Include="DataContextModel\HIS_VACC_REACT_PLACE.cs" />
+    <Compile Include="DataContextModel\HIS_VACC_REACT_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_VAEX_VAER.cs" />
+    <Compile Include="DataContextModel\HIS_VARE_VART.cs" />
+    <Compile Include="DataContextModel\HIS_VITAMIN_A.cs" />
+    <Compile Include="DataContextModel\HIS_WARNING_FEE_CFG.cs" />
+    <Compile Include="DataContextModel\HIS_WELFARE_TYPE.cs" />
+    <Compile Include="DataContextModel\HIS_WORKING_SHIFT.cs" />
+    <Compile Include="DataContextModel\HIS_WORK_PLACE.cs" />
+    <Compile Include="DataContextModel\HTC_EXPENSE.cs" />
+    <Compile Include="DataContextModel\HTC_EXPENSE_TYPE.cs" />
+    <Compile Include="DataContextModel\HTC_PERIOD.cs" />
+    <Compile Include="DataContextModel\HTC_PERIOD_DEPARTMENT.cs" />
+    <Compile Include="DataContextModel\HTC_REPARTITION_RATIO.cs" />
+    <Compile Include="DataContextModel\HTC_REPARTITION_TYPE.cs" />
+    <Compile Include="DataContextModel\HTC_REVENUE.cs" />
+    <Compile Include="DataContextModel\LIS_ANTIBIOTIC.cs" />
+    <Compile Include="DataContextModel\LIS_BACTERIUM.cs" />
+    <Compile Include="DataContextModel\LIS_BACTERIUM_FAMILY.cs" />
+    <Compile Include="DataContextModel\LIS_BAC_ANTIBIOTIC.cs" />
+    <Compile Include="DataContextModel\LIS_BARCODE.cs" />
+    <Compile Include="DataContextModel\LIS_CONFIG.cs" />
+    <Compile Include="DataContextModel\LIS_MACHINE.cs" />
+    <Compile Include="DataContextModel\LIS_MACHINE_INDEX.cs" />
+    <Compile Include="DataContextModel\LIS_ORDINAL.cs" />
+    <Compile Include="DataContextModel\LIS_RESULT.cs" />
+    <Compile Include="DataContextModel\LIS_SAMPLE.cs" />
+    <Compile Include="DataContextModel\LIS_SAMPLE_CONDITION.cs" />
+    <Compile Include="DataContextModel\LIS_SAMPLE_SERVICE.cs" />
+    <Compile Include="DataContextModel\LIS_SAMPLE_SERVICE_STT.cs" />
+    <Compile Include="DataContextModel\LIS_SAMPLE_STT.cs" />
+    <Compile Include="DataContextModel\LIS_SAMPLE_TYPE.cs" />
+    <Compile Include="DataContextModel\LIS_TEST_INDEX_MAP.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_MATERIAL.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_MATERIAL_2.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_MATY_REQ.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_MEDICINE.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_MEDICINE_1.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_MEDICINE_2.cs" />
+    <Compile Include="DataContextModel\L_HIS_EXP_MEST_METY_REQ.cs" />
+    <Compile Include="DataContextModel\L_HIS_MATERIAL_BEAN.cs" />
+    <Compile Include="DataContextModel\L_HIS_MEDICINE_BEAN.cs" />
+    <Compile Include="DataContextModel\L_HIS_ROOM_COUNTER.cs" />
+    <Compile Include="DataContextModel\L_HIS_ROOM_COUNTER_1.cs" />
+    <Compile Include="DataContextModel\L_HIS_SERVICE_REQ.cs" />
+    <Compile Include="DataContextModel\L_HIS_SERVICE_REQ_1.cs" />
+    <Compile Include="DataContextModel\L_HIS_TREATMENT.cs" />
+    <Compile Include="DataContextModel\L_HIS_TREATMENT_1.cs" />
+    <Compile Include="DataContextModel\L_HIS_TREATMENT_2.cs" />
+    <Compile Include="DataContextModel\L_HIS_TREATMENT_3.cs" />
+    <Compile Include="DataContextModel\L_HIS_TREATMENT_BED_ROOM.cs" />
+    <Compile Include="DataContextModel\Model12.cs" />
+    <Compile Include="DataContextModel\SAR_FORM.cs" />
+    <Compile Include="DataContextModel\SAR_FORM_DATA.cs" />
+    <Compile Include="DataContextModel\SAR_FORM_FIELD.cs" />
+    <Compile Include="DataContextModel\SAR_FORM_TYPE.cs" />
+    <Compile Include="DataContextModel\SAR_PRINT.cs" />
+    <Compile Include="DataContextModel\SAR_PRINT_LOG.cs" />
+    <Compile Include="DataContextModel\SAR_PRINT_TYPE.cs" />
+    <Compile Include="DataContextModel\SAR_PRINT_TYPE_CFG.cs" />
+    <Compile Include="DataContextModel\SAR_REPORT.cs" />
+    <Compile Include="DataContextModel\SAR_REPORT_CALENDAR.cs" />
+    <Compile Include="DataContextModel\SAR_REPORT_STT.cs" />
+    <Compile Include="DataContextModel\SAR_REPORT_TEMPLATE.cs" />
+    <Compile Include="DataContextModel\SAR_REPORT_TYPE.cs" />
+    <Compile Include="DataContextModel\SAR_REPORT_TYPE_GROUP.cs" />
+    <Compile Include="DataContextModel\SAR_RETY_FOFI.cs" />
+    <Compile Include="DataContextModel\SAR_USER_REPORT_TYPE.cs" />
+    <Compile Include="DataContextModel\SDA_COMMUNE.cs" />
+    <Compile Include="DataContextModel\SDA_COMMUNE_MAP.cs" />
+    <Compile Include="DataContextModel\SDA_CONFIG.cs" />
+    <Compile Include="DataContextModel\SDA_CONFIG_APP.cs" />
+    <Compile Include="DataContextModel\SDA_CONFIG_APP_USER.cs" />
+    <Compile Include="DataContextModel\SDA_CUSTOMIZE_BUTTON.cs" />
+    <Compile Include="DataContextModel\SDA_CUSTOMIZE_UI.cs" />
+    <Compile Include="DataContextModel\SDA_DELETE_DATA.cs" />
+    <Compile Include="DataContextModel\SDA_DISTRICT.cs" />
+    <Compile Include="DataContextModel\SDA_DISTRICT_MAP.cs" />
+    <Compile Include="DataContextModel\SDA_ETHNIC.cs" />
+    <Compile Include="DataContextModel\SDA_EVENT_LOG.cs" />
+    <Compile Include="DataContextModel\SDA_GROUP.cs" />
+    <Compile Include="DataContextModel\SDA_GROUP_TYPE.cs" />
+    <Compile Include="DataContextModel\SDA_HIDE_CONTROL.cs" />
+    <Compile Include="DataContextModel\SDA_LANGUAGE.cs" />
+    <Compile Include="DataContextModel\SDA_LICENSE.cs" />
+    <Compile Include="DataContextModel\SDA_METADATA.cs" />
+    <Compile Include="DataContextModel\SDA_MODULE_FIELD.cs" />
+    <Compile Include="DataContextModel\SDA_NATIONAL.cs" />
+    <Compile Include="DataContextModel\SDA_NOTIFY.cs" />
+    <Compile Include="DataContextModel\SDA_PROVINCE.cs" />
+    <Compile Include="DataContextModel\SDA_PROVINCE_MAP.cs" />
+    <Compile Include="DataContextModel\SDA_RELIGION.cs" />
+    <Compile Include="DataContextModel\SDA_SQL.cs" />
+    <Compile Include="DataContextModel\SDA_SQL_PARAM.cs" />
+    <Compile Include="DataContextModel\SDA_TRANSLATE.cs" />
+    <Compile Include="DataContextModel\SDA_TROUBLE.cs" />
+    <Compile Include="DataContextModel\TYT_DEATH.cs" />
+    <Compile Include="DataContextModel\TYT_FETUS_ABORTION.cs" />
+    <Compile Include="DataContextModel\TYT_FETUS_BORN.cs" />
+    <Compile Include="DataContextModel\TYT_FETUS_EXAM.cs" />
+    <Compile Include="DataContextModel\TYT_GDSK.cs" />
+    <Compile Include="DataContextModel\TYT_HIV.cs" />
+    <Compile Include="DataContextModel\TYT_KHH.cs" />
+    <Compile Include="DataContextModel\TYT_MALARIA.cs" />
+    <Compile Include="DataContextModel\TYT_NERVES.cs" />
+    <Compile Include="DataContextModel\TYT_TUBERCULOSIS.cs" />
+    <Compile Include="DataContextModel\TYT_UNINFECT.cs" />
+    <Compile Include="DataContextModel\TYT_UNINFECT_ICD.cs" />
+    <Compile Include="DataContextModel\TYT_UNINFECT_ICD_GROUP.cs" />
+    <Compile Include="DataContextModel\V_ACS_APPLICATION_ROLE.cs" />
+    <Compile Include="DataContextModel\V_ACS_CONTROL.cs" />
+    <Compile Include="DataContextModel\V_ACS_CONTROL_ROLE.cs" />
+    <Compile Include="DataContextModel\V_ACS_MODULE.cs" />
+    <Compile Include="DataContextModel\V_ACS_MODULE_ROLE.cs" />
+    <Compile Include="DataContextModel\V_ACS_ROLE_BASE.cs" />
+    <Compile Include="DataContextModel\V_ACS_ROLE_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_ACCIDENT_HURT.cs" />
+    <Compile Include="DataContextModel\V_HIS_ACCOUNT_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_ACIN_INTERACTIVE.cs" />
+    <Compile Include="DataContextModel\V_HIS_ADR.cs" />
+    <Compile Include="DataContextModel\V_HIS_ADR_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_ALLERGENIC.cs" />
+    <Compile Include="DataContextModel\V_HIS_ALLERGY_CARD.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTIBIOTIC_NEW_REG.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTIBIOTIC_REQUEST.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTICIPATE.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTICIPATE_BLTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTICIPATE_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTICIPATE_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_ANTIGEN_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_APPOINTMENT_PERIOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_APPOINTMENT_SERV.cs" />
+    <Compile Include="DataContextModel\V_HIS_BABY.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_BSTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_LOG.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_LOG_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_LOG_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_LOG_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_LOG_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_BED_ROOM_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_BHYT_WHITELIST.cs" />
+    <Compile Include="DataContextModel\V_HIS_BID.cs" />
+    <Compile Include="DataContextModel\V_HIS_BID_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_BID_BLOOD_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_BID_MATERIAL_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_BID_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_BILL_FUND.cs" />
+    <Compile Include="DataContextModel\V_HIS_BIRTH_CERT_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_BLOOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_BLOOD_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_BLOOD_TYPE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_BLTY_SERVICE.cs" />
+    <Compile Include="DataContextModel\V_HIS_BRANCH_TIME.cs" />
+    <Compile Include="DataContextModel\V_HIS_CARD.cs" />
+    <Compile Include="DataContextModel\V_HIS_CARER_CARD.cs" />
+    <Compile Include="DataContextModel\V_HIS_CARER_CARD_BORROW.cs" />
+    <Compile Include="DataContextModel\V_HIS_CARE_DETAIL.cs" />
+    <Compile Include="DataContextModel\V_HIS_CARO_ACCOUNT_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_CASHIER_ADD_CONFIG.cs" />
+    <Compile Include="DataContextModel\V_HIS_CASHIER_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_CONFIG.cs" />
+    <Compile Include="DataContextModel\V_HIS_CONTACT_POINT.cs" />
+    <Compile Include="DataContextModel\V_HIS_CO_TREATMENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_DATA_STORE.cs" />
+    <Compile Include="DataContextModel\V_HIS_DATA_STORE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEATH_CERT_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEBATE.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEBATE_EKIP_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEBATE_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEPARTMENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEPARTMENT_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEPARTMENT_TRAN.cs" />
+    <Compile Include="DataContextModel\V_HIS_DEPOSIT_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_DESK.cs" />
+    <Compile Include="DataContextModel\V_HIS_DHST.cs" />
+    <Compile Include="DataContextModel\V_HIS_DISPENSE.cs" />
+    <Compile Include="DataContextModel\V_HIS_DOCUMENT_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_EKIP_PLAN_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_EKIP_TEMP_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_EKIP_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_EMPLOYEE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EMR_COVER_CONFIG.cs" />
+    <Compile Include="DataContextModel\V_HIS_EMTE_MATERIAL_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EMTE_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EQUIPMENT_SET_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXAM_SCHEDULE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXAM_SERE_DIRE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXECUTE_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXECUTE_ROOM_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXME_REASON_CFG.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_BLTY_SERVICE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_5.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_BLOOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_BLTY_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_BLTY_REQ_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_BLTY_REQ_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_CHMS.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_CHMS_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_CHMS_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MANU.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MATERIAL.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MATERIAL_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MATERIAL_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MATERIAL_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MATERIAL_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MATY_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE_5.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_MEDICINE_6.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_METY_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_METY_REQ_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXP_MEST_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_EXRO_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_FINANCE_PERIOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_FORM_TYPE_CFG_DATA.cs" />
+    <Compile Include="DataContextModel\V_HIS_HEIN_APPROVAL.cs" />
+    <Compile Include="DataContextModel\V_HIS_HIV_TREATMENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_HOLD_RETURN.cs" />
+    <Compile Include="DataContextModel\V_HIS_HORE_DHTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_HORE_HANDOVER.cs" />
+    <Compile Include="DataContextModel\V_HIS_HORE_HOHA.cs" />
+    <Compile Include="DataContextModel\V_HIS_ICD.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_BLOOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MANU.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MATERIAL.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MATERIAL_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MATERIAL_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MATERIAL_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MEDICINE.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MEDICINE_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MEDICINE_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_MEDICINE_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_PAY.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_PROPOSE.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_MEST_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_IMP_USER_TEMP_DT.cs" />
+    <Compile Include="DataContextModel\V_HIS_INFUSION.cs" />
+    <Compile Include="DataContextModel\V_HIS_INFUSION_SUM.cs" />
+    <Compile Include="DataContextModel\V_HIS_INVOICE.cs" />
+    <Compile Include="DataContextModel\V_HIS_INVOICE_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_KSK_ACCESS.cs" />
+    <Compile Include="DataContextModel\V_HIS_KSK_CONTRACT.cs" />
+    <Compile Include="DataContextModel\V_HIS_KSK_DRIVER.cs" />
+    <Compile Include="DataContextModel\V_HIS_KSK_SERVICE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MACHINE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_BEAN.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_BEAN_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_BEAN_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_PATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MATERIAL_TYPE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICAL_ASSESSMENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICAL_CONTRACT.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_BEAN.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_BEAN_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_BEAN_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_MATERIAL.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_MEDICINE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_PATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_TYPE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_TYPE_ACIN.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_TYPE_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDICINE_TYPE_TUT.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_CONTRACT_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_CONTRACT_MATY_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_CONTRACT_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_CONTRACT_METY_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_REACT.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_REACT_SUM.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_RECORD.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_RECORD_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_RECORD_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_RECORD_BORROW.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_RECORD_BORROW_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_EXTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_IMTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_MATY_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_METY_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEDI_STOCK_PERIOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_INVE_USER.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_MATY_DEPA.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_METY_DEPA.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_METY_UNIT.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PATIENT_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PATY_SUB.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PATY_TRTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PERIOD_BLOOD.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PERIOD_BLTY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PERIOD_MATE.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PERIOD_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PERIOD_MEDI.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_PERIOD_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_MEST_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_METY_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_METY_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_METY_PRODUCT.cs" />
+    <Compile Include="DataContextModel\V_HIS_NONE_MEDI_SERVICE.cs" />
+    <Compile Include="DataContextModel\V_HIS_PACKAGE_DETAIL.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT_PROGRAM.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT_TYPE_ALLOW.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT_TYPE_ALTER.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT_TYPE_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_PATIENT_TYPE_SUB.cs" />
+    <Compile Include="DataContextModel\V_HIS_PREPARE.cs" />
+    <Compile Include="DataContextModel\V_HIS_PREPARE_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_PREPARE_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_PROGRAM.cs" />
+    <Compile Include="DataContextModel\V_HIS_PTTT_CALENDAR.cs" />
+    <Compile Include="DataContextModel\V_HIS_PTTT_GROUP_BEST.cs" />
+    <Compile Include="DataContextModel\V_HIS_PTTT_TABLE.cs" />
+    <Compile Include="DataContextModel\V_HIS_QC_NORMATION.cs" />
+    <Compile Include="DataContextModel\V_HIS_RATION_SCHEDULE.cs" />
+    <Compile Include="DataContextModel\V_HIS_RATION_SUM.cs" />
+    <Compile Include="DataContextModel\V_HIS_RECEPTION_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_REFECTORY.cs" />
+    <Compile Include="DataContextModel\V_HIS_REGISTER_GATE.cs" />
+    <Compile Include="DataContextModel\V_HIS_REGISTER_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_REHA_TRAIN.cs" />
+    <Compile Include="DataContextModel\V_HIS_REHA_TRAIN_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_REMUNERATION.cs" />
+    <Compile Include="DataContextModel\V_HIS_REST_RETR_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_ROOM_COUNTER.cs" />
+    <Compile Include="DataContextModel\V_HIS_ROOM_COUNTER_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_ROOM_SARO.cs" />
+    <Compile Include="DataContextModel\V_HIS_ROOM_TIME.cs" />
+    <Compile Include="DataContextModel\V_HIS_ROOM_TYPE_MODULE.cs" />
+    <Compile Include="DataContextModel\V_HIS_SAMPLE_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_SARO_EXRO.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_10.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_11.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_12.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_13.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_14.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_15.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_16.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_17.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_5.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_6.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_7.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_8.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_9.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_BILL.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_DEBT.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_DEPOSIT.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_PTTT.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_PTTT_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_RATION.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_REHA.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_SUIN.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_TEIN.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_TEIN_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERE_SERV_TEMP.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_CHANGE_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_CONDITION.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_FOLLOW.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_HEIN.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_MATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_NUM_ORDER.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_PACKAGE.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_PATY.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_10.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_11.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_12.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_13.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_5.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_6.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_7.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_8.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_9.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_REQ_METY.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_RERE_TIME.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_RETY_CAT.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_SAME.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERVICE_TYPE.cs" />
+    <Compile Include="DataContextModel\V_HIS_SERV_SEGR.cs" />
+    <Compile Include="DataContextModel\V_HIS_SESE_DEPO_REPAY.cs" />
+    <Compile Include="DataContextModel\V_HIS_SESE_TRANS_REQ.cs" />
+    <Compile Include="DataContextModel\V_HIS_STATION.cs" />
+    <Compile Include="DataContextModel\V_HIS_SUBCLINICAL_RS_ADD.cs" />
+    <Compile Include="DataContextModel\V_HIS_SUIM_INDEX.cs" />
+    <Compile Include="DataContextModel\V_HIS_SUIM_SETY_SUIN.cs" />
+    <Compile Include="DataContextModel\V_HIS_SURG_REMUNERATION.cs" />
+    <Compile Include="DataContextModel\V_HIS_SURG_REMU_DETAIL.cs" />
+    <Compile Include="DataContextModel\V_HIS_SURG_REMU_DETAIL_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_TEST_INDEX.cs" />
+    <Compile Include="DataContextModel\V_HIS_TEST_INDEX_RANGE.cs" />
+    <Compile Include="DataContextModel\V_HIS_TRACKING.cs" />
+    <Compile Include="DataContextModel\V_HIS_TRANSACTION.cs" />
+    <Compile Include="DataContextModel\V_HIS_TRANSACTION_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_TRANSACTION_5.cs" />
+    <Compile Include="DataContextModel\V_HIS_TRANSFUSION_SUM.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_10.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_11.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_12.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_5.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_6.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_7.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_8.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_9.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_BED_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_BED_ROOM_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_BORROW.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_FEE.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_FEE_1.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_FEE_2.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_FEE_3.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_FEE_4.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_LOGGING.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_TREATMENT_UNLIMIT.cs" />
+    <Compile Include="DataContextModel\V_HIS_USER_ACCOUNT_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_USER_GROUP_TEMP_DT.cs" />
+    <Compile Include="DataContextModel\V_HIS_USER_INVOICE_BOOK.cs" />
+    <Compile Include="DataContextModel\V_HIS_USER_ROOM.cs" />
+    <Compile Include="DataContextModel\V_HIS_VACCINATION.cs" />
+    <Compile Include="DataContextModel\V_HIS_VACCINATION_EXAM.cs" />
+    <Compile Include="DataContextModel\V_HIS_VACC_APPOINTMENT.cs" />
+    <Compile Include="DataContextModel\V_HIS_VAEX_VAER.cs" />
+    <Compile Include="DataContextModel\V_HIS_VITAMIN_A.cs" />
+    <Compile Include="DataContextModel\V_HTC_EXPENSE.cs" />
+    <Compile Include="DataContextModel\V_HTC_PERIOD_DEPARTMENT.cs" />
+    <Compile Include="DataContextModel\V_HTC_REPARTITION_RATIO.cs" />
+    <Compile Include="DataContextModel\V_LIS_BAC_ANTIBIOTIC.cs" />
+    <Compile Include="DataContextModel\V_LIS_RESULT.cs" />
+    <Compile Include="DataContextModel\V_LIS_SAMPLE.cs" />
+    <Compile Include="DataContextModel\V_LIS_SAMPLE_SERVICE.cs" />
+    <Compile Include="DataContextModel\V_LIS_TEST_INDEX_MAP.cs" />
+    <Compile Include="DataContextModel\V_SAR_FORM.cs" />
+    <Compile Include="DataContextModel\V_SAR_PRINT_TYPE_CFG.cs" />
+    <Compile Include="DataContextModel\V_SAR_REPORT.cs" />
+    <Compile Include="DataContextModel\V_SAR_REPORT_TEMPLATE.cs" />
+    <Compile Include="DataContextModel\V_SAR_RETY_FOFI.cs" />
+    <Compile Include="DataContextModel\V_SAR_USER_REPORT_TYPE.cs" />
+    <Compile Include="DataContextModel\V_SDA_COMMUNE.cs" />
+    <Compile Include="DataContextModel\V_SDA_CONFIG_APP_USER.cs" />
+    <Compile Include="DataContextModel\V_SDA_DISTRICT.cs" />
+    <Compile Include="DataContextModel\V_SDA_GROUP.cs" />
+    <Compile Include="DataContextModel\V_SDA_NATIONAL.cs" />
+    <Compile Include="DataContextModel\V_SDA_PROVINCE.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
